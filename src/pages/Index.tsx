@@ -1,10 +1,11 @@
 
 import React, { useEffect, useState } from 'react';
-import { Phone, MapPin, Clock, Settings, Wrench, Cog, Star, Users, Award, CheckCircle, Hammer } from 'lucide-react';
+import { Phone, MapPin, Clock, Settings, Wrench, Cog, Star, Users, Award, CheckCircle, Hammer, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -12,6 +13,10 @@ const Index = () => {
 
   const handleWhatsAppClick = () => {
     window.open('https://wa.me/919820209923', '_blank');
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const services = [
@@ -27,8 +32,8 @@ const Index = () => {
     },
     {
       icon: <Hammer className="w-8 h-8" />,
-      title: "XCMG 178E Filing Machine",
-      description: "Specialized services for XCMG 178E filing machines including maintenance, repairs, and technical support."
+      title: "XCMG 178E Piling Rig",
+      description: "Specialized services for XCMG 178E piling rigs including maintenance, repairs, and technical support."
     },
     {
       icon: <Cog className="w-8 h-8" />,
@@ -67,10 +72,12 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className={`${isVisible ? 'animate-slide-left' : 'opacity-0'}`}>
-              <h1 className="text-3xl font-bold text-gradient">SMS ENGINEERING WORKS</h1>
-              <p className="text-gray-600 text-sm">Professional Engineering Services</p>
+              <h1 className="text-2xl md:text-3xl font-bold text-gradient">SMS ENGINEERING WORKS</h1>
+              <p className="text-gray-600 text-xs md:text-sm">Professional Engineering Services</p>
             </div>
-            <div className={`hidden md:flex items-center space-x-6 ${isVisible ? 'animate-slide-right' : 'opacity-0'}`}>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-6">
               <nav className="flex items-center space-x-6">
                 <Link to="/" className="text-red-600 font-semibold">Home</Link>
                 <Link to="/about" className="text-gray-700 hover:text-red-600 font-semibold">About</Link>
@@ -79,30 +86,58 @@ const Index = () => {
               </nav>
               <button onClick={handleWhatsAppClick} className="flex items-center text-gray-700 hover:text-red-600">
                 <Phone className="w-4 h-4 mr-2" />
-                <span className="font-semibold">098202 09923</span>
+                <span className="font-semibold">WhatsApp</span>
               </button>
               <div className="flex items-center text-gray-700">
                 <Clock className="w-4 h-4 mr-2 text-red-600" />
                 <span className="font-semibold">Open 24 Hours</span>
               </div>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden p-2"
+              onClick={toggleMobileMenu}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
+              <nav className="flex flex-col space-y-4 pt-4">
+                <Link to="/" className="text-red-600 font-semibold" onClick={toggleMobileMenu}>Home</Link>
+                <Link to="/about" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>About</Link>
+                <Link to="/services" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>Services</Link>
+                <Link to="/contact" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>Contact</Link>
+                <button onClick={handleWhatsAppClick} className="flex items-center text-gray-700 hover:text-red-600 justify-start">
+                  <Phone className="w-4 h-4 mr-2" />
+                  <span className="font-semibold">WhatsApp</span>
+                </button>
+                <div className="flex items-center text-gray-700">
+                  <Clock className="w-4 h-4 mr-2 text-red-600" />
+                  <span className="font-semibold">Open 24 Hours</span>
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="gradient-red text-white py-20">
+      <section className="gradient-red text-white py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className={`text-5xl md:text-6xl font-bold mb-6 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+            <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold mb-6 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
               Excellence in Engineering
             </h2>
-            <p className={`text-xl md:text-2xl mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-              Your trusted partner for XCMG 178E and all engineering solutions in Mumbai
+            <p className={`text-lg md:text-xl lg:text-2xl mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+              Your trusted partner for XCMG 178E piling rig and all engineering solutions in Mumbai
             </p>
             <div className={`flex flex-col md:flex-row gap-4 justify-center ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
               <button onClick={handleWhatsAppClick} className="btn-secondary animate-pulse-hover">
-                WhatsApp: 098202 09923
+                Contact Us on WhatsApp
               </button>
               <Link to="/services" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-all duration-300">
                 Our Services
@@ -115,60 +150,60 @@ const Index = () => {
       {/* Contact Info Bar */}
       <section className="bg-black text-white py-4">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
             <div className="flex items-center">
-              <MapPin className="w-5 h-5 mr-2 text-red-500" />
-              <span>Modi Compound Shop No. 6, Reay Road West, Mazgaon, Mumbai 400010</span>
+              <MapPin className="w-5 h-5 mr-2 text-red-500 flex-shrink-0" />
+              <span className="text-sm md:text-base">Modi Compound Shop No. 6, Reay Road West, Mazgaon, Mumbai 400010</span>
             </div>
             <button onClick={handleWhatsAppClick} className="flex items-center hover:text-red-500">
               <Phone className="w-5 h-5 mr-2 text-red-500" />
-              <span>098202 09923</span>
+              <span>WhatsApp Us</span>
             </button>
           </div>
         </div>
       </section>
 
       {/* XCMG 178E Featured Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h3 className="text-4xl font-bold text-gray-900 mb-4">XCMG 178E Filing Machine Specialists</h3>
-              <p className="text-xl text-gray-600">Expert maintenance and repair services for XCMG 178E equipment</p>
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">XCMG 178E Piling Rig and Specialists</h3>
+              <p className="text-lg md:text-xl text-gray-600">Expert maintenance and repair services for XCMG 178E piling rig equipment</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className={`${isVisible ? 'animate-slide-left' : 'opacity-0'}`}>
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" 
-                  alt="XCMG 178E Filing Machine" 
-                  className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  src="/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png"
+                  alt="SMS Engineering Works - XCMG 178E Piling Rig Services" 
+                  className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
                 />
               </div>
               <div className={`${isVisible ? 'animate-slide-right' : 'opacity-0'}`}>
-                <h4 className="text-3xl font-bold text-gray-900 mb-6">XCMG 178E Professional Support</h4>
-                <p className="text-lg text-gray-600 mb-6">
-                  We specialize in comprehensive support for XCMG 178E filing machines, ensuring optimal performance, minimal downtime, and maximum productivity for your operations.
+                <h4 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">XCMG 178E Professional Support</h4>
+                <p className="text-base md:text-lg text-gray-600 mb-6">
+                  Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs.
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
                     Expert technicians trained on XCMG equipment
                   </li>
                   <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
                     Genuine spare parts and components
                   </li>
                   <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
                     24/7 emergency repair services
                   </li>
                   <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3" />
+                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
                     Preventive maintenance programs
                   </li>
                 </ul>
-                <button onClick={handleWhatsAppClick} className="btn-primary">
-                  Book XCMG Service: 098202 09923
+                <button onClick={handleWhatsAppClick} className="btn-primary w-full md:w-auto">
+                  Book XCMG Service
                 </button>
               </div>
             </div>
@@ -177,26 +212,26 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h3>
-            <p className="text-xl text-gray-600">Comprehensive engineering solutions for all your needs</p>
+          <div className="text-center mb-12 md:mb-16">
+            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h3>
+            <p className="text-lg md:text-xl text-gray-600">Comprehensive engineering solutions for all your needs</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className={`bg-white p-8 rounded-xl shadow-lg card-hover ${
+                className={`bg-white p-6 md:p-8 rounded-xl shadow-lg card-hover ${
                   isVisible ? 'animate-slide-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="text-red-600 mb-4">{service.icon}</div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h4>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">{service.title}</h4>
+                <p className="text-gray-600 mb-4 text-sm md:text-base">{service.description}</p>
                 <button onClick={handleWhatsAppClick} className="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
-                  Contact: 098202 09923
+                  Contact Us
                 </button>
               </div>
             ))}
@@ -205,13 +240,13 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">Why Choose SMS Engineering Works?</h3>
-            <p className="text-xl text-gray-600">We deliver excellence in every project</p>
+          <div className="text-center mb-12 md:mb-16">
+            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose SMS Engineering Works?</h3>
+            <p className="text-lg md:text-xl text-gray-600">We deliver excellence in every project</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {features.map((feature, index) => (
               <div 
                 key={index}
@@ -222,7 +257,7 @@ const Index = () => {
               >
                 <div className="mb-4 flex justify-center">{feature.icon}</div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h4>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -230,13 +265,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="gradient-black text-white py-20">
+      <section className="gradient-black text-white py-12 md:py-20">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-4xl font-bold mb-6">Ready to Start Your Project?</h3>
-          <p className="text-xl mb-8">Contact us today for professional engineering solutions and XCMG 178E services</p>
+          <h3 className="text-2xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h3>
+          <p className="text-lg md:text-xl mb-8">Contact us today for professional engineering solutions and XCMG 178E piling rig services</p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <button onClick={handleWhatsAppClick} className="btn-primary">
-              WhatsApp: 098202 09923
+              Contact on WhatsApp
             </button>
             <Link to="/contact" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-300">
               Visit Our Office
@@ -250,9 +285,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h4 className="text-2xl font-bold text-gradient mb-4">SMS ENGINEERING WORKS</h4>
-              <p className="text-gray-400 mb-4">
-                Professional engineering services provider in Mumbai, specializing in XCMG 178E filing machines and offering 24/7 solutions for all your industrial needs.
+              <h4 className="text-xl md:text-2xl font-bold text-gradient mb-4">SMS ENGINEERING WORKS</h4>
+              <p className="text-gray-400 mb-4 text-sm md:text-base">
+                Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs.
               </p>
               <div className="flex items-center text-gray-400">
                 <Star className="w-5 h-5 text-yellow-500 mr-1" />
@@ -260,19 +295,19 @@ const Index = () => {
                 <Star className="w-5 h-5 text-yellow-500 mr-1" />
                 <Star className="w-5 h-5 text-yellow-500 mr-1" />
                 <Star className="w-5 h-5 text-yellow-500 mr-2" />
-                <span>Trusted Service</span>
+                <span className="text-sm md:text-base">Trusted Service</span>
               </div>
             </div>
             <div>
               <h5 className="text-lg font-semibold mb-4 text-red-500">Contact Info</h5>
-              <div className="space-y-3 text-gray-400">
+              <div className="space-y-3 text-gray-400 text-sm md:text-base">
                 <div className="flex items-start">
-                  <MapPin className="w-5 h-5 mr-2 text-red-500 mt-1" />
+                  <MapPin className="w-5 h-5 mr-2 text-red-500 mt-1 flex-shrink-0" />
                   <span>Modi Compound Shop No. 6<br />Reay Road West, Mazgaon<br />Mumbai, Maharashtra 400010</span>
                 </div>
                 <button onClick={handleWhatsAppClick} className="flex items-center text-gray-400 hover:text-white">
                   <Phone className="w-5 h-5 mr-2 text-red-500" />
-                  <span>098202 09923</span>
+                  <span>WhatsApp Us</span>
                 </button>
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 mr-2 text-red-500" />
@@ -282,8 +317,8 @@ const Index = () => {
             </div>
             <div>
               <h5 className="text-lg font-semibold mb-4 text-red-500">Our Services</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li>• XCMG 178E Filing Machine</li>
+              <ul className="space-y-2 text-gray-400 text-sm md:text-base">
+                <li>• XCMG 178E Piling Rig</li>
                 <li>• Mechanical Engineering</li>
                 <li>• Equipment Maintenance</li>
                 <li>• Custom Solutions</li>
@@ -292,7 +327,7 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm md:text-base">
             <p>&copy; 2024 SMS Engineering Works. All rights reserved. | Professional Engineering Services Mumbai</p>
           </div>
         </div>
