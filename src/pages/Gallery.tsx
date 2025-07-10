@@ -14,81 +14,82 @@ const Gallery = () => {
     { id: "hydraulic", name: "Hydraulic Fittings" },
     { id: "manufacturing", name: "Manufacturing" },
     { id: "piling", name: "Piling Projects" },
-    { id: "equipment", name: "Equipment" }
+    { id: "equipment", name: "Equipment" },
+    { id: "marine", name: "Marine Services" }
   ];
 
   const galleryImages = [
     {
       category: "hydraulic",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Hydraulic Hose Fittings",
-      description: "High-quality hydraulic fittings manufacturing"
-    },
-    {
-      category: "manufacturing",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Manufacturing Process",
-      description: "State-of-the-art manufacturing facility"
-    },
-    {
-      category: "piling",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Bridge Piling Project",
-      description: "Commercial bridge foundation work"
-    },
-    {
-      category: "equipment",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "XCMG 178E Piling Rig",
-      description: "Advanced piling equipment in operation"
+      src: "/lovable-uploads/afd3c24a-563f-4e21-8544-d07809c74408.png",
+      title: "Hydraulic Pipe Connector",
+      description: "High-pressure hydraulic pipe connector with threaded connections"
     },
     {
       category: "hydraulic",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Teflon Hoses",
-      description: "Chemical resistant PTFE lined hoses"
-    },
-    {
-      category: "manufacturing",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Quality Testing",
-      description: "Rigorous quality control processes"
-    },
-    {
-      category: "piling",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Residential Piling",
-      description: "Foundation work for residential complex"
+      src: "/lovable-uploads/739b83df-5c32-4ccc-b67e-9ee8c0ea3d8b.png",
+      title: "Complete Hydraulic Fittings Range",
+      description: "Comprehensive collection of hydraulic fittings and adapters"
     },
     {
       category: "equipment",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Mait HR180",
-      description: "Heavy-duty piling equipment"
+      src: "/lovable-uploads/d42f626d-7172-48df-bfef-24b6642a2b0e.png",
+      title: "Hydraulic Clamp Assembly",
+      description: "Heavy-duty hydraulic clamp for industrial applications"
+    },
+    {
+      category: "manufacturing",
+      src: "/lovable-uploads/ca774818-5338-423b-8b98-7856b1f63247.png",
+      title: "Precision Flanges Manufacturing",
+      description: "CNC machined flanges for hydraulic systems"
+    },
+    {
+      category: "piling",
+      src: "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png",
+      title: "XCMG 178E Piling Rig Operation",
+      description: "Advanced piling equipment in action"
+    },
+    {
+      category: "equipment",
+      src: "/lovable-uploads/c2485a9f-e355-4262-913f-ef5cf90fcea9.png",
+      title: "Heavy Duty Rotary Equipment",
+      description: "Industrial rotary drilling equipment"
+    },
+    {
+      category: "marine",
+      src: "/lovable-uploads/59a6d687-aa42-4e6c-b3b1-fa05f538357c.png",
+      title: "Marine Hydraulic Systems",
+      description: "Offshore hydraulic system installation"
+    },
+    {
+      category: "marine",
+      src: "/lovable-uploads/0021c5d7-147b-4c37-ba62-1303ba576d80.png",
+      title: "Ship Hydraulic Equipment",
+      description: "Marine vessel hydraulic equipment servicing"
+    },
+    {
+      category: "marine",
+      src: "/lovable-uploads/dadd887c-2e8e-407f-a547-005213dab467.png",
+      title: "Offshore Platform Services",
+      description: "Hydraulic system maintenance on offshore platforms"
+    },
+    {
+      category: "manufacturing",
+      src: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
+      title: "CNC Machining Operations",
+      description: "Precision manufacturing of hydraulic components"
     },
     {
       category: "hydraulic",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Stainless Steel Fittings",
-      description: "Corrosion resistant SS fittings"
-    },
-    {
-      category: "manufacturing",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "CNC Machining",
-      description: "Precision machining operations"
-    },
-    {
-      category: "piling",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "DMC Piling",
-      description: "Deep foundation construction"
+      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      title: "High Pressure Hoses",
+      description: "Industrial grade hydraulic hoses"
     },
     {
       category: "equipment",
-      src: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
-      title: "Sunward 175",
-      description: "Multi-purpose drilling equipment"
+      src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
+      title: "Crimping Machine",
+      description: "Hydraulic hose crimping equipment"
     }
   ];
 
@@ -143,7 +144,8 @@ const Gallery = () => {
             {filteredImages.map((image, index) => (
               <div 
                 key={index}
-                className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
+                className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setSelectedImage(image.src)}
               >
                 <img 
@@ -166,10 +168,10 @@ const Gallery = () => {
       {/* Image Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 animate-fade-in"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-4xl max-h-[90vh]">
+          <div className="relative max-w-4xl max-h-[90vh] animate-scale-in">
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"

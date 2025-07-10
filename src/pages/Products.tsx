@@ -18,23 +18,58 @@ const Products = () => {
     { id: "hoses", name: "Hoses" },
     { id: "connectors", name: "Pipe Connectors" },
     { id: "piling", name: "Piling Parts" },
-    { id: "attachments", name: "Attachments" }
+    { id: "equipment", name: "Equipment" }
   ];
 
   const products = [
     {
       category: "hydraulic",
-      name: "Hydraulic Hose Fittings JIC",
-      description: "High-pressure JIC hydraulic fittings for industrial applications with 37° flare design",
-      features: ["Pressure tested up to 6000 PSI", "Corrosion resistant zinc plating", "37° JIC thread design", "ISO 8434-2 certified"],
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
+      name: "Hydraulic Pipe Connectors",
+      description: "High-pressure hydraulic pipe connectors with threaded connections for industrial applications",
+      features: ["Pressure tested up to 6000 PSI", "Corrosion resistant coating", "Threaded design for secure connection", "Multiple size options available"],
+      image: "/lovable-uploads/afd3c24a-563f-4e21-8544-d07809c74408.png"
     },
     {
       category: "hydraulic",
-      name: "BSP Hydraulic Adapters",
-      description: "British Standard Pipe adapters for secure hydraulic connections",
-      features: ["BSP threaded connections", "High tensile strength", "Leak-proof design", "Multiple angle configurations"],
-      image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=400&h=300&fit=crop"
+      name: "Complete Hydraulic Fittings Range",
+      description: "Comprehensive collection of hydraulic fittings, adapters, and connectors for all applications",
+      features: ["JIC, BSP, NPT thread options", "45°, 90° and straight configurations", "High tensile strength", "Zinc plated finish"],
+      image: "/lovable-uploads/739b83df-5c32-4ccc-b67e-9ee8c0ea3d8b.png"
+    },
+    {
+      category: "equipment",
+      name: "Hydraulic Clamp Assembly",
+      description: "Heavy-duty hydraulic clamp for secure pipe and equipment connections in industrial applications",
+      features: ["Heavy-duty construction", "Secure clamping mechanism", "Corrosion resistant", "Multiple diameter options"],
+      image: "/lovable-uploads/d42f626d-7172-48df-bfef-24b6642a2b0e.png"
+    },
+    {
+      category: "connectors",
+      name: "Precision Manufactured Flanges",
+      description: "CNC machined flanges for hydraulic systems with precision engineering and quality finish",
+      features: ["CNC machined precision", "Multiple pressure ratings", "SAE and DIN standards", "O-ring groove machined"],
+      image: "/lovable-uploads/ca774818-5338-423b-8b98-7856b1f63247.png"
+    },
+    {
+      category: "equipment",
+      name: "XCMG 178E Piling Rig",
+      description: "Advanced piling equipment with hydraulic systems for foundation and construction work",
+      features: ["Maximum depth 35m", "Hydraulic rotary drive", "Advanced control system", "Expert maintenance available"],
+      image: "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png"
+    },
+    {
+      category: "equipment",
+      name: "Heavy Duty Rotary Equipment",
+      description: "Industrial rotary drilling equipment for various foundation and piling applications",
+      features: ["High torque capacity", "Durable construction", "Versatile applications", "Professional service support"],
+      image: "/lovable-uploads/c2485a9f-e355-4262-913f-ef5cf90fcea9.png"
+    },
+    {
+      category: "equipment",
+      name: "Hydraulic Hose Crimping Machine",
+      description: "Professional crimping equipment for hydraulic hose assembly and repair services",
+      features: ["Precision crimping", "Multiple die sizes", "Consistent quality", "Operator safety features"],
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop"
     },
     {
       category: "hoses",
@@ -55,63 +90,21 @@ const Products = () => {
       name: "Stainless Steel Flexible Hoses",
       description: "Corrugated stainless steel hoses with braided outer covering for high-temperature applications",
       features: ["316L stainless steel construction", "Temperature rating up to 650°C", "Vibration and thermal shock resistant", "Long service life"],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop"
-    },
-    {
-      category: "hoses",
-      name: "Industrial Rubber Hoses",
-      description: "Heavy-duty rubber hoses for oil, fuel, water and pneumatic applications",
-      features: ["Oil and fuel resistant", "Weather and UV resistant", "Multiple diameter options", "Textile reinforced construction"],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=400&h=300&fit=crop"
     },
     {
       category: "connectors",
       name: "Quick Release Couplings",
       description: "Hydraulic quick-connect couplings for efficient system assembly and maintenance",
       features: ["Quick disconnect mechanism", "Flat face seal design", "Multiple flow rates", "Easy one-hand operation"],
-      image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=400&h=300&fit=crop"
-    },
-    {
-      category: "connectors",
-      name: "Pipe Elbows & Adapters",
-      description: "Precision-machined 45° and 90° elbows and straight adapters for hydraulic systems",
-      features: ["CNC machined from steel", "45°, 90° and straight configurations", "JIC, BSP, NPT thread options", "Zinc plated finish"],
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
     },
     {
-      category: "connectors",
-      name: "Hydraulic Flanges",
-      description: "SAE and DIN standard hydraulic flanges for heavy-duty pipe and equipment connections",
-      features: ["Forged carbon steel construction", "SAE J518 and DIN 24342 standards", "O-ring groove machined", "Multiple pressure ratings"],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop"
-    },
-    {
       category: "piling",
-      name: "XCMG 178E Piling Rig Parts",
+      name: "XCMG 178E Spare Parts",
       description: "Original and compatible spare parts for XCMG 178E piling rigs and drilling equipment",
       features: ["OEM equivalent quality", "Direct replacement parts", "Hydraulic cylinder seals", "Drive motor components"],
       image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop"
-    },
-    {
-      category: "piling",
-      name: "Mait HR180 Spare Parts",
-      description: "Genuine and aftermarket spare parts for Mait HR180 and HR100 piling rigs",
-      features: ["Hydraulic pump parts", "Rotary drive components", "Crowd cylinder seals", "Electrical components"],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
-    },
-    {
-      category: "attachments",
-      name: "Hydraulic Breaker Attachments",
-      description: "High-performance hydraulic breakers for excavators and piling rigs",
-      features: ["Universal mounting brackets", "Auto-greasing system", "Noise and vibration dampening", "Multiple chisel options"],
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
-    },
-    {
-      category: "attachments",
-      name: "Rotary Drilling Attachments",
-      description: "Specialized rotary drilling attachments for foundation and piling operations",
-      features: ["Heavy-duty gear reduction", "Torque ratings up to 50,000 Nm", "Interchangeable drill tools", "Hydraulic crowd system"],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop"
     }
   ];
 
@@ -166,7 +159,8 @@ const Products = () => {
             {filteredProducts.map((product, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden card-hover"
+                className="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="h-48 bg-gray-200 relative overflow-hidden">
                   <img 
@@ -223,21 +217,21 @@ const Products = () => {
               Quality Assurance & Standards
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg">
+              <div className="bg-white p-6 rounded-xl shadow-lg animate-scale-in">
                 <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">ISO Certified</h3>
                 <p className="text-gray-600">
                   All products manufactured under ISO quality management systems
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg">
+              <div className="bg-white p-6 rounded-xl shadow-lg animate-scale-in" style={{ animationDelay: "0.1s" }}>
                 <Star className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Pressure Tested</h3>
                 <p className="text-gray-600">
                   Every fitting tested to ensure maximum pressure ratings
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg">
+              <div className="bg-white p-6 rounded-xl shadow-lg animate-scale-in" style={{ animationDelay: "0.2s" }}>
                 <Filter className="w-12 h-12 text-blue-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Material Traced</h3>
                 <p className="text-gray-600">
