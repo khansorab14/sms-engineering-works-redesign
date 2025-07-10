@@ -1,247 +1,302 @@
+
 import React from "react";
 import {
-  Phone,
-  MapPin,
-  Clock,
-  Settings,
   Wrench,
-  Cog,
-  Star,
-  Hammer,
-  // Tool,
+  Settings,
+  Shield,
+  Clock,
+  CheckCircle,
+  Award,
+  Users,
   Zap,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import FloatingCTA from "../components/FloatingCTA";
 
 const Services = () => {
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/919820209923", "_blank");
   };
 
-  const services = [
+  const pilingServices = [
     {
-      icon: <Settings className="w-12 h-12" />,
-      title: "Mechanical Engineering",
-      description:
-        "Complete mechanical engineering solutions for industrial and commercial applications including design, installation, and maintenance.",
-      features: [
-        "Design & Analysis",
-        "Installation Services",
-        "Maintenance Support",
-        "Quality Assurance",
-      ],
+      title: "Bridge Piling",
+      description: "Specialized foundation solutions for bridge construction projects",
+      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      features: ["Deep foundation systems", "Load bearing analysis", "Seismic resistance", "Weather protection"]
     },
     {
-      icon: <Wrench className="w-12 h-12" />,
-      title: "Equipment Maintenance",
-      description:
-        "Professional maintenance and repair services for all types of industrial equipment to ensure optimal performance.",
-      features: [
-        "Preventive Maintenance",
-        "Emergency Repairs",
-        "Equipment Upgrades",
-        "Performance Optimization",
-      ],
+      title: "Residential Piling",
+      description: "Foundation services for residential and commercial buildings",
+      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      features: ["Soil analysis", "Foundation design", "Quality assurance", "Timely completion"]
     },
     {
-      icon: <Cog className="w-12 h-12" />,
+      title: "DMC Piling",
+      description: "Deep Mixing Column techniques for soil stabilization",
+      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      features: ["Soil stabilization", "Environmental friendly", "Cost effective", "Proven technology"]
+    },
+    {
+      title: "Tripod Piling",
+      description: "Specialized tripod drilling for challenging terrains",
+      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      features: ["Difficult access areas", "Precision drilling", "Minimal disruption", "Expert execution"]
+    },
+    {
+      title: "Rotary Piling",
+      description: "Advanced rotary drilling for various foundation types",
+      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      features: ["Continuous flight auger", "Large diameter piles", "High capacity", "Efficient installation"]
+    }
+  ];
+
+  const machinery = [
+    { name: "XCMG 178E", type: "Heavy Duty Piling Rig", capacity: "Max 35m depth" },
+    { name: "Mait HR180", type: "Rotary Drilling Rig", capacity: "Max 40m depth" },
+    { name: "Sunward 175", type: "Multi-Purpose Rig", capacity: "Max 30m depth" },
+    { name: "Casagrande B125", type: "Foundation Rig", capacity: "Max 45m depth" }
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Award,
+      title: "Industry Expertise",
+      description: "25+ years of experience in hydraulic and piling solutions with proven track record"
+    },
+    {
+      icon: Shield,
+      title: "National Standards",
+      description: "All work complies with IS codes and international standards for quality assurance"
+    },
+    {
+      icon: Users,
+      title: "Trained Team",
+      description: "In-house trained technicians and engineers with specialized certifications"
+    },
+    {
+      icon: Zap,
+      title: "Advanced Equipment",
+      description: "State-of-the-art machinery and tools for efficient project execution"
+    },
+    {
+      icon: Clock,
+      title: "24/7 Support",
+      description: "Round-the-clock service availability for emergency and scheduled maintenance"
+    },
+    {
+      icon: Settings,
       title: "Custom Solutions",
-      description:
-        "Tailored engineering solutions designed to meet your specific requirements and industry standards.",
-      features: [
-        "Custom Design",
-        "Fabrication",
-        "Installation",
-        "After-sales Support",
-      ],
-    },
-    {
-      icon: <Hammer className="w-12 h-12" />,
-      title: "XCMG 178E Filing Machine",
-      description:
-        "Specialized services for XCMG 178E filing machines including maintenance, repairs, and operational support.",
-      features: [
-        "Machine Maintenance",
-        "Technical Support",
-        "Spare Parts",
-        "Training Services",
-      ],
-    },
-    // {
-    //   icon: <Tool className="w-12 h-12" />,
-    //   title: "Industrial Consulting",
-    //   description: "Expert consulting services to optimize your industrial processes and improve operational efficiency.",
-    //   features: ["Process Analysis", "Efficiency Improvement", "Cost Optimization", "Technical Guidance"]
-    // },
-    {
-      icon: <Zap className="w-12 h-12" />,
-      title: "Emergency Services",
-      description:
-        "24/7 emergency repair and maintenance services to minimize downtime and ensure business continuity.",
-      features: [
-        "24/7 Availability",
-        "Rapid Response",
-        "On-site Service",
-        "Emergency Repairs",
-      ],
-    },
+      description: "Tailored solutions designed to meet specific project requirements and challenges"
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="animate-slide-left">
-              <h1 className="text-3xl font-bold text-gradient">
-                SMS ENGINEERING WORKS
-              </h1>
-              <p className="text-gray-600 text-sm">
-                Professional Engineering Services
-              </p>
-            </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/"
-                className="text-gray-700 hover:text-red-600 font-semibold"
-              >
-                Home
-              </Link>
-              <Link
-                to="/about"
-                className="text-gray-700 hover:text-red-600 font-semibold"
-              >
-                About
-              </Link>
-              <Link to="/services" className="text-red-600 font-semibold">
-                Services
-              </Link>
-              <Link
-                to="/contact"
-                className="text-gray-700 hover:text-red-600 font-semibold"
-              >
-                Contact
-              </Link>
-              <button
-                onClick={handleWhatsAppClick}
-                className="flex items-center text-gray-700 hover:text-red-600"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                <span className="font-semibold">098202 09923</span>
-              </button>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      {/* Services Hero Section */}
+    <div className="min-h-screen bg-background">
+      <Header />
+      <FloatingCTA />
+      
+      {/* Hero Section */}
       <section className="gradient-red text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-up">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
               Our Services
-            </h2>
+            </h1>
             <p className="text-xl md:text-2xl mb-8 animate-fade-in">
-              Comprehensive engineering solutions for all your industrial needs
+              Comprehensive piling and hydraulic solutions for all your industrial needs
             </p>
-            <button
-              onClick={handleWhatsAppClick}
-              className="btn-secondary animate-pulse-hover"
-            >
-              Get Quote: 098202 09923
-            </button>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Piling Services */}
       <section className="py-20">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Piling Services
+            </h2>
+            <p className="text-xl text-gray-600">
+              Professional foundation solutions with advanced equipment and expertise
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
+            {pilingServices.map((service, index) => (
+              <div 
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg card-hover border border-gray-100"
+                className="bg-white rounded-xl shadow-lg overflow-hidden card-hover"
               >
-                <div className="text-red-600 mb-6">{service.icon}</div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">
-                  {service.title}
-                </h4>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="text-gray-600 text-sm flex items-center"
-                    >
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={handleWhatsAppClick}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
-                >
-                  Contact: 098202 09923
-                </button>
+                <div className="h-48 bg-gray-200 relative overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={handleWhatsAppClick}
+                    className="w-full mt-4 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors"
+                  >
+                    Get Quote
+                  </button>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Service - XCMG 178E */}
+      {/* Machinery Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h3 className="text-4xl font-bold text-gray-900 mb-4">
-                XCMG 178E Filing Machine Services
-              </h3>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Advanced Machinery
+            </h2>
+            <p className="text-xl text-gray-600">
+              State-of-the-art equipment for efficient and precise piling operations
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {machinery.map((machine, index) => (
+              <div 
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-lg text-center card-hover"
+              >
+                <Wrench className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {machine.name}
+                </h3>
+                <p className="text-gray-600 mb-2">
+                  {machine.type}
+                </p>
+                <p className="text-sm text-red-600 font-semibold">
+                  {machine.capacity}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose SMS Engineering Works?
+            </h2>
+            <p className="text-xl text-gray-600">
+              Your trusted partner for industrial excellence and reliability
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whyChooseUs.map((reason, index) => (
+              <div 
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-lg card-hover text-center"
+              >
+                <reason.icon className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {reason.title}
+                </h3>
+                <p className="text-gray-600">
+                  {reason.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hydraulic Services */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Hydraulic Services & Manufacturing
+              </h2>
               <p className="text-xl text-gray-600">
-                Specialized maintenance and support for XCMG 178E equipment
+                Complete hydraulic solutions from design to manufacturing
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"
-                  alt="XCMG 178E Filing Machine"
-                  className="w-full h-80 object-cover rounded-xl shadow-lg"
-                />
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white p-8 rounded-xl shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Manufacturing Services
+                </h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Hydraulic hose fittings and couplings
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Teflon, SS, and rubber hoses
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Pipe connectors and adaptors
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Elbows and flanges
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Custom hydraulic solutions
+                  </li>
+                </ul>
               </div>
-              <div>
-                <h4 className="text-2xl font-bold text-gray-900 mb-6">
-                  Expert XCMG 178E Support
-                </h4>
-                <p className="text-gray-600 mb-6">
-                  Our specialized team provides comprehensive support for XCMG
-                  178E filing machines, ensuring optimal performance and minimal
-                  downtime for your operations.
-                </p>
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="text-center p-4 bg-white rounded-lg shadow">
-                    <h5 className="font-bold text-gray-900">24/7</h5>
-                    <p className="text-sm text-gray-600">Emergency Support</p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg shadow">
-                    <h5 className="font-bold text-gray-900">Expert</h5>
-                    <p className="text-sm text-gray-600">Technicians</p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg shadow">
-                    <h5 className="font-bold text-gray-900">Genuine</h5>
-                    <p className="text-sm text-gray-600">Spare Parts</p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg shadow">
-                    <h5 className="font-bold text-gray-900">Quick</h5>
-                    <p className="text-sm text-gray-600">Response</p>
-                  </div>
-                </div>
-                <button onClick={handleWhatsAppClick} className="btn-primary">
-                  Book Service: 098202 09923
-                </button>
+              
+              <div className="bg-white p-8 rounded-xl shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Service & Maintenance
+                </h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Equipment servicing and repair
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Spare parts supply
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Preventive maintenance programs
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    24/7 emergency support
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    Technical consultation
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -251,92 +306,22 @@ const Services = () => {
       {/* CTA Section */}
       <section className="gradient-black text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-4xl font-bold mb-6">
-            Need Professional Engineering Services?
-          </h3>
-          <p className="text-xl mb-8">
-            Contact us today for customized solutions
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Contact us today for professional consultation and quality solutions
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button onClick={handleWhatsAppClick} className="btn-primary">
-              WhatsApp: 098202 09923
-            </button>
-            <Link
-              to="/contact"
-              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-300"
-            >
-              Visit Our Office
-            </Link>
-          </div>
+          <button
+            onClick={handleWhatsAppClick}
+            className="btn-primary"
+          >
+            Contact on WhatsApp
+          </button>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h4 className="text-2xl font-bold text-gradient mb-4">
-                SMS ENGINEERING WORKS
-              </h4>
-              <p className="text-gray-400 mb-4">
-                Professional engineering services provider in Mumbai,
-                specializing in XCMG 178E and industrial solutions.
-              </p>
-              <div className="flex items-center text-gray-400">
-                <Star className="w-5 h-5 text-yellow-500 mr-1" />
-                <Star className="w-5 h-5 text-yellow-500 mr-1" />
-                <Star className="w-5 h-5 text-yellow-500 mr-1" />
-                <Star className="w-5 h-5 text-yellow-500 mr-1" />
-                <Star className="w-5 h-5 text-yellow-500 mr-2" />
-                <span>Trusted Service</span>
-              </div>
-            </div>
-            <div>
-              <h5 className="text-lg font-semibold mb-4 text-red-500">
-                Contact Info
-              </h5>
-              <div className="space-y-3 text-gray-400">
-                <div className="flex items-start">
-                  <MapPin className="w-5 h-5 mr-2 text-red-500 mt-1" />
-                  <span>
-                    Modi Compound Shop No. 6<br />
-                    Reay Road West, Mazgaon
-                    <br />
-                    Mumbai, Maharashtra 400010
-                  </span>
-                </div>
-                <button
-                  onClick={handleWhatsAppClick}
-                  className="flex items-center text-gray-400 hover:text-white"
-                >
-                  <Phone className="w-5 h-5 mr-2 text-red-500" />
-                  <span>098202 09923</span>
-                </button>
-                <div className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2 text-red-500" />
-                  <span>Open 24 Hours</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h5 className="text-lg font-semibold mb-4 text-red-500">
-                Our Services
-              </h5>
-              <ul className="space-y-2 text-gray-400">
-                <li>• XCMG 178E Filing Machine</li>
-                <li>• Mechanical Engineering</li>
-                <li>• Equipment Maintenance</li>
-                <li>• Custom Solutions</li>
-                <li>• Emergency Services</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 SMS Engineering Works. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

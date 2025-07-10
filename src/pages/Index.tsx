@@ -1,337 +1,279 @@
 
-import React, { useEffect, useState } from 'react';
-import { Phone, MapPin, Clock, Settings, Wrench, Cog, Star, Users, Award, CheckCircle, Hammer, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import {
+  Phone,
+  MapPin,
+  Clock,
+  ChevronDown,
+  Star,
+  Award,
+  Shield,
+  Users,
+  Menu,
+  X,
+  ArrowRight,
+  CheckCircle,
+  PlayCircle,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import HeroModal from "../components/HeroModal";
+import FloatingCTA from "../components/FloatingCTA";
 
 const Index = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    setIsVisible(true);
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/919820209923', '_blank');
+    window.open("https://wa.me/919820209923", "_blank");
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const handleCallClick = () => {
+    window.open("tel:+919820209923", "_blank");
   };
-
-  const services = [
-    {
-      icon: <Settings className="w-8 h-8" />,
-      title: "Mechanical Engineering",
-      description: "Complete mechanical engineering solutions for industrial and commercial applications."
-    },
-    {
-      icon: <Wrench className="w-8 h-8" />,
-      title: "Equipment Maintenance",
-      description: "Professional maintenance and repair services for all types of industrial equipment."
-    },
-    {
-      icon: <Hammer className="w-8 h-8" />,
-      title: "XCMG 178E Piling Rig",
-      description: "Specialized services for XCMG 178E piling rigs including maintenance, repairs, and technical support."
-    },
-    {
-      icon: <Cog className="w-8 h-8" />,
-      title: "Custom Solutions",
-      description: "Tailored engineering solutions designed to meet your specific requirements."
-    }
-  ];
 
   const features = [
     {
-      icon: <Clock className="w-6 h-6 text-red-600" />,
-      title: "24/7 Service",
-      description: "Available round the clock for emergency services"
+      icon: Shield,
+      title: "Quality Assurance",
+      description: "ISO certified manufacturing with international standards"
     },
     {
-      icon: <Users className="w-6 h-6 text-red-600" />,
+      icon: Award,
+      title: "Industry Expertise",
+      description: "25+ years of experience in hydraulic and piling solutions"
+    },
+    {
+      icon: Users,
       title: "Expert Team",
-      description: "Highly skilled and experienced engineers"
+      description: "In-house trained technicians and engineers"
     },
     {
-      icon: <Award className="w-6 h-6 text-red-600" />,
-      title: "Quality Assured",
-      description: "Premium quality work with guaranteed results"
+      icon: Clock,
+      title: "24/7 Support",
+      description: "Round-the-clock service and emergency support"
+    }
+  ];
+
+  const services = [
+    {
+      title: "Hydraulic Hose Fittings",
+      description: "Complete range of hydraulic fittings, couplings, and adaptors",
+      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png"
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-red-600" />,
-      title: "Trusted Service",
-      description: "Reliable and professional service delivery"
+      title: "Piling Services",
+      description: "Bridge, residential, and commercial piling solutions",
+      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png"
+    },
+    {
+      title: "XCMG 178E Specialists",
+      description: "Expert servicing and spare parts for piling rigs",
+      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className={`${isVisible ? 'animate-slide-left' : 'opacity-0'}`}>
-              <h1 className="text-2xl md:text-3xl font-bold text-gradient">SMS ENGINEERING WORKS</h1>
-              <p className="text-gray-600 text-xs md:text-sm">Professional Engineering Services</p>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <FloatingCTA />
+      
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-red">
+        <div 
+          className="absolute inset-0 bg-black/30"
+          style={{
+            transform: `translateY(${scrollY * 0.5}px)`,
+          }}
+        />
+        
+        <div className="container mx-auto px-4 text-center text-white relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
+              SMS ENGINEERING WORKS
+            </h1>
+            <p className="text-xl md:text-2xl lg:text-3xl mb-4 animate-fade-in">
+              XCMG 178E Piling Rig and Specialists
+            </p>
+            <p className="text-lg md:text-xl mb-8 animate-fade-in opacity-90">
+              Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="btn-primary flex items-center justify-center"
+              >
+                <PlayCircle className="w-5 h-5 mr-2" />
+                Learn More About Us
+              </button>
+              <button
+                onClick={handleWhatsAppClick}
+                className="btn-secondary flex items-center justify-center"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Contact on WhatsApp
+              </button>
             </div>
             
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
-              <nav className="flex items-center space-x-6">
-                <Link to="/" className="text-red-600 font-semibold">Home</Link>
-                <Link to="/about" className="text-gray-700 hover:text-red-600 font-semibold">About</Link>
-                <Link to="/services" className="text-gray-700 hover:text-red-600 font-semibold">Services</Link>
-                <Link to="/contact" className="text-gray-700 hover:text-red-600 font-semibold">Contact</Link>
-              </nav>
-              <button onClick={handleWhatsAppClick} className="flex items-center text-gray-700 hover:text-red-600">
-                <Phone className="w-4 h-4 mr-2" />
-                <span className="font-semibold">WhatsApp</span>
-              </button>
-              <div className="flex items-center text-gray-700">
-                <Clock className="w-4 h-4 mr-2 text-red-600" />
-                <span className="font-semibold">Open 24 Hours</span>
-              </div>
+            <div className="flex items-center justify-center text-gray-300">
+              <MapPin className="w-5 h-5 mr-2" />
+              <span>Modi Compound, Reay Road West, Mazgaon, Mumbai</span>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden p-2"
-              onClick={toggleMobileMenu}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
-
-          {/* Mobile Navigation Menu */}
-          {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
-              <nav className="flex flex-col space-y-4 pt-4">
-                <Link to="/" className="text-red-600 font-semibold" onClick={toggleMobileMenu}>Home</Link>
-                <Link to="/about" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>About</Link>
-                <Link to="/services" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>Services</Link>
-                <Link to="/contact" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>Contact</Link>
-                <button onClick={handleWhatsAppClick} className="flex items-center text-gray-700 hover:text-red-600 justify-start">
-                  <Phone className="w-4 h-4 mr-2" />
-                  <span className="font-semibold">WhatsApp</span>
-                </button>
-                <div className="flex items-center text-gray-700">
-                  <Clock className="w-4 h-4 mr-2 text-red-600" />
-                  <span className="font-semibold">Open 24 Hours</span>
-                </div>
-              </nav>
-            </div>
-          )}
         </div>
-      </header>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-8 h-8 text-white" />
+        </div>
+      </section>
 
-      {/* Hero Section */}
-      <section className="gradient-red text-white py-12 md:py-20">
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold mb-6 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-              Excellence in Engineering
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose SMS Engineering Works?
             </h2>
-            <p className={`text-lg md:text-xl lg:text-2xl mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-              Your trusted partner for XCMG 178E piling rig and all engineering solutions in Mumbai
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We are the preferred strategic partner providing comprehensive support services to the manufacturing industries across Mumbai and Maharashtra.
             </p>
-            <div className={`flex flex-col md:flex-row gap-4 justify-center ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
-              <button onClick={handleWhatsAppClick} className="btn-secondary animate-pulse-hover">
-                Contact Us on WhatsApp
-              </button>
-              <Link to="/services" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-all duration-300">
-                Our Services
-              </Link>
-            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Contact Info Bar */}
-      <section className="bg-black text-white py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
-            <div className="flex items-center">
-              <MapPin className="w-5 h-5 mr-2 text-red-500 flex-shrink-0" />
-              <span className="text-sm md:text-base">Modi Compound Shop No. 6, Reay Road West, Mazgaon, Mumbai 400010</span>
-            </div>
-            <button onClick={handleWhatsAppClick} className="flex items-center hover:text-red-500">
-              <Phone className="w-5 h-5 mr-2 text-red-500" />
-              <span>WhatsApp Us</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* XCMG 178E Featured Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">XCMG 178E Piling Rig and Specialists</h3>
-              <p className="text-lg md:text-xl text-gray-600">Expert maintenance and repair services for XCMG 178E piling rig equipment</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className={`${isVisible ? 'animate-slide-left' : 'opacity-0'}`}>
-                <img 
-                  src="/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png"
-                  alt="SMS Engineering Works - XCMG 178E Piling Rig Services" 
-                  className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
-                />
-              </div>
-              <div className={`${isVisible ? 'animate-slide-right' : 'opacity-0'}`}>
-                <h4 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">XCMG 178E Professional Support</h4>
-                <p className="text-base md:text-lg text-gray-600 mb-6">
-                  Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs.
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <div 
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-lg card-hover text-center"
+                style={{
+                  animationDelay: `${index * 0.1}s`
+                }}
+              >
+                <feature.icon className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600">
+                  {feature.description}
                 </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                    Expert technicians trained on XCMG equipment
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                    Genuine spare parts and components
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                    24/7 emergency repair services
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                    Preventive maintenance programs
-                  </li>
-                </ul>
-                <button onClick={handleWhatsAppClick} className="btn-primary w-full md:w-auto">
-                  Book XCMG Service
-                </button>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-12 md:py-20">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h3>
-            <p className="text-lg md:text-xl text-gray-600">Comprehensive engineering solutions for all your needs</p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Core Services
+            </h2>
+            <p className="text-xl text-gray-600">
+              Comprehensive solutions for your industrial needs
+            </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          
+          <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className={`bg-white p-6 md:p-8 rounded-xl shadow-lg card-hover ${
-                  isVisible ? 'animate-slide-up' : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden card-hover"
               >
-                <div className="text-red-600 mb-4">{service.icon}</div>
-                <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">{service.title}</h4>
-                <p className="text-gray-600 mb-4 text-sm md:text-base">{service.description}</p>
-                <button onClick={handleWhatsAppClick} className="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
-                  Contact Us
-                </button>
+                <div className="h-48 bg-gray-200 relative overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {service.description}
+                  </p>
+                  <Link 
+                    to="/services"
+                    className="inline-flex items-center text-red-600 hover:text-red-700 font-semibold"
+                  >
+                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      {/* About Preview Section */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose SMS Engineering Works?</h3>
-            <p className="text-lg md:text-xl text-gray-600">We deliver excellence in every project</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className={`text-center p-6 ${
-                  isVisible ? 'animate-fade-in' : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="mb-4 flex justify-center">{feature.icon}</div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h4>
-                <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              About SMS Engineering Works
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              With over 25 years of expertise in hydraulic solutions and piling services, SMS Engineering Works has established itself as a trusted partner for industries across Mumbai. We specialize in manufacturing high-quality hydraulic hose fittings, providing comprehensive piling services, and maintaining XCMG 178E piling rigs.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-red-600 mb-2">500+</div>
+                <div className="text-gray-600">Projects Completed</div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="gradient-black text-white py-12 md:py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h3>
-          <p className="text-lg md:text-xl mb-8">Contact us today for professional engineering solutions and XCMG 178E piling rig services</p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button onClick={handleWhatsAppClick} className="btn-primary">
-              Contact on WhatsApp
-            </button>
-            <Link to="/contact" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-300">
-              Visit Our Office
+              <div className="text-center">
+                <div className="text-3xl font-bold text-red-600 mb-2">25+</div>
+                <div className="text-gray-600">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-red-600 mb-2">100+</div>
+                <div className="text-gray-600">Happy Clients</div>
+              </div>
+            </div>
+            <Link to="/about" className="btn-primary">
+              Learn More About Us
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h4 className="text-xl md:text-2xl font-bold text-gradient mb-4">SMS ENGINEERING WORKS</h4>
-              <p className="text-gray-400 mb-4 text-sm md:text-base">
-                Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs.
-              </p>
-              <div className="flex items-center text-gray-400">
-                <Star className="w-5 h-5 text-yellow-500 mr-1" />
-                <Star className="w-5 h-5 text-yellow-500 mr-1" />
-                <Star className="w-5 h-5 text-yellow-500 mr-1" />
-                <Star className="w-5 h-5 text-yellow-500 mr-1" />
-                <Star className="w-5 h-5 text-yellow-500 mr-2" />
-                <span className="text-sm md:text-base">Trusted Service</span>
-              </div>
-            </div>
-            <div>
-              <h5 className="text-lg font-semibold mb-4 text-red-500">Contact Info</h5>
-              <div className="space-y-3 text-gray-400 text-sm md:text-base">
-                <div className="flex items-start">
-                  <MapPin className="w-5 h-5 mr-2 text-red-500 mt-1 flex-shrink-0" />
-                  <span>Modi Compound Shop No. 6<br />Reay Road West, Mazgaon<br />Mumbai, Maharashtra 400010</span>
-                </div>
-                <button onClick={handleWhatsAppClick} className="flex items-center text-gray-400 hover:text-white">
-                  <Phone className="w-5 h-5 mr-2 text-red-500" />
-                  <span>WhatsApp Us</span>
-                </button>
-                <div className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2 text-red-500" />
-                  <span>Open 24 Hours</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h5 className="text-lg font-semibold mb-4 text-red-500">Our Services</h5>
-              <ul className="space-y-2 text-gray-400 text-sm md:text-base">
-                <li>• XCMG 178E Piling Rig</li>
-                <li>• Mechanical Engineering</li>
-                <li>• Equipment Maintenance</li>
-                <li>• Custom Solutions</li>
-                <li>• Emergency Repairs</li>
-                <li>• Consultation Services</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm md:text-base">
-            <p>&copy; 2024 SMS Engineering Works. All rights reserved. | Professional Engineering Services Mumbai</p>
+      {/* CTA Section */}
+      <section className="gradient-black text-white py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Get expert consultation and quality solutions for your industrial needs
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={handleWhatsAppClick}
+              className="btn-primary"
+            >
+              Get Quote on WhatsApp
+            </button>
+            <button
+              onClick={handleCallClick}
+              className="btn-secondary border-2 border-white"
+            >
+              Call Now
+            </button>
           </div>
         </div>
-      </footer>
+      </section>
+
+      <HeroModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Footer />
     </div>
   );
 };
