@@ -24,83 +24,94 @@ const Products = () => {
   const products = [
     {
       category: "hydraulic",
-      name: "Hydraulic Hose Fittings",
-      description: "High-pressure hydraulic fittings for industrial applications",
-      features: ["Pressure tested up to 6000 PSI", "Corrosion resistant", "Multiple thread types", "ISO certified"],
-      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&h=300&fit=crop",
-      warranty: "2 years"
+      name: "Hydraulic Hose Fittings JIC",
+      description: "High-pressure JIC hydraulic fittings for industrial applications with 37° flare design",
+      features: ["Pressure tested up to 6000 PSI", "Corrosion resistant zinc plating", "37° JIC thread design", "ISO 8434-2 certified"],
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
+    },
+    {
+      category: "hydraulic",
+      name: "BSP Hydraulic Adapters",
+      description: "British Standard Pipe adapters for secure hydraulic connections",
+      features: ["BSP threaded connections", "High tensile strength", "Leak-proof design", "Multiple angle configurations"],
+      image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=400&h=300&fit=crop"
     },
     {
       category: "hoses",
-      name: "Teflon Hoses",
-      description: "Chemical resistant PTFE lined hoses for extreme conditions",
-      features: ["Temperature range: -65°C to +260°C", "Chemical resistant", "Non-stick surface", "FDA approved"],
-      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop",
-      warranty: "1 year"
+      name: "High Pressure Hydraulic Hoses",
+      description: "SAE 100R1AT and SAE 100R2AT hydraulic hoses for heavy-duty applications",
+      features: ["Working pressure up to 350 bar", "Temperature range -40°C to +100°C", "Steel wire braided reinforcement", "Synthetic rubber tube"],
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
     },
     {
       category: "hoses",
-      name: "Stainless Steel Hoses",
-      description: "Flexible stainless steel hoses for high-temperature applications",
-      features: ["Corrosion resistant", "High temperature rating", "Flexible design", "Long service life"],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
-      warranty: "3 years"
+      name: "Teflon PTFE Hoses",
+      description: "Chemical resistant PTFE lined hoses for extreme conditions and corrosive fluids",
+      features: ["Temperature range -65°C to +260°C", "Chemical and corrosion resistant", "Non-stick PTFE lining", "FDA approved for food grade"],
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop"
     },
     {
       category: "hoses",
-      name: "Rubber Hoses",
-      description: "Heavy-duty rubber hoses for various industrial applications",
-      features: ["Oil resistant", "Weather resistant", "Multiple diameter options", "Reinforced construction"],
-      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop",
-      warranty: "1 year"
+      name: "Stainless Steel Flexible Hoses",
+      description: "Corrugated stainless steel hoses with braided outer covering for high-temperature applications",
+      features: ["316L stainless steel construction", "Temperature rating up to 650°C", "Vibration and thermal shock resistant", "Long service life"],
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop"
+    },
+    {
+      category: "hoses",
+      name: "Industrial Rubber Hoses",
+      description: "Heavy-duty rubber hoses for oil, fuel, water and pneumatic applications",
+      features: ["Oil and fuel resistant", "Weather and UV resistant", "Multiple diameter options", "Textile reinforced construction"],
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
     },
     {
       category: "connectors",
-      name: "Pipe Couplings",
-      description: "Quick-connect couplings for efficient system assembly",
-      features: ["Quick disconnect", "Leak-proof design", "Multiple sizes", "Easy installation"],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
-      warranty: "2 years"
+      name: "Quick Release Couplings",
+      description: "Hydraulic quick-connect couplings for efficient system assembly and maintenance",
+      features: ["Quick disconnect mechanism", "Flat face seal design", "Multiple flow rates", "Easy one-hand operation"],
+      image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=400&h=300&fit=crop"
     },
     {
       category: "connectors",
-      name: "Adaptors & Elbows",
-      description: "Precision-machined adaptors and elbows for system connections",
-      features: ["CNC machined", "Multiple angles", "Threaded connections", "Pressure tested"],
-      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&h=300&fit=crop",
-      warranty: "2 years"
+      name: "Pipe Elbows & Adapters",
+      description: "Precision-machined 45° and 90° elbows and straight adapters for hydraulic systems",
+      features: ["CNC machined from steel", "45°, 90° and straight configurations", "JIC, BSP, NPT thread options", "Zinc plated finish"],
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
     },
     {
       category: "connectors",
-      name: "Flanges",
-      description: "Heavy-duty flanges for pipe and equipment connections",
-      features: ["Forged construction", "Standard dimensions", "Gasket surfaces", "Multiple materials"],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
-      warranty: "5 years"
+      name: "Hydraulic Flanges",
+      description: "SAE and DIN standard hydraulic flanges for heavy-duty pipe and equipment connections",
+      features: ["Forged carbon steel construction", "SAE J518 and DIN 24342 standards", "O-ring groove machined", "Multiple pressure ratings"],
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop"
     },
     {
       category: "piling",
-      name: "Mait Piling Rig Spare Parts",
-      description: "Genuine and compatible spare parts for Mait piling rigs",
-      features: ["OEM quality", "Direct fit", "Extensive inventory", "Fast delivery"],
-      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop",
-      warranty: "1 year"
+      name: "XCMG 178E Piling Rig Parts",
+      description: "Original and compatible spare parts for XCMG 178E piling rigs and drilling equipment",
+      features: ["OEM equivalent quality", "Direct replacement parts", "Hydraulic cylinder seals", "Drive motor components"],
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop"
+    },
+    {
+      category: "piling",
+      name: "Mait HR180 Spare Parts",
+      description: "Genuine and aftermarket spare parts for Mait HR180 and HR100 piling rigs",
+      features: ["Hydraulic pump parts", "Rotary drive components", "Crowd cylinder seals", "Electrical components"],
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
     },
     {
       category: "attachments",
-      name: "Compressor Attachments",
-      description: "High-performance attachments for compressor systems",
-      features: ["Universal mounting", "Durable construction", "Easy maintenance", "Performance optimized"],
-      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&h=300&fit=crop",
-      warranty: "2 years"
+      name: "Hydraulic Breaker Attachments",
+      description: "High-performance hydraulic breakers for excavators and piling rigs",
+      features: ["Universal mounting brackets", "Auto-greasing system", "Noise and vibration dampening", "Multiple chisel options"],
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
     },
     {
       category: "attachments",
-      name: "Excavator Attachments",
-      description: "Specialized attachments for excavator operations",
-      features: ["Heavy-duty design", "Compatible mounting", "Wear resistant", "Field tested"],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
-      warranty: "2 years"
+      name: "Rotary Drilling Attachments",
+      description: "Specialized rotary drilling attachments for foundation and piling operations",
+      features: ["Heavy-duty gear reduction", "Torque ratings up to 50,000 Nm", "Interchangeable drill tools", "Hydraulic crowd system"],
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop"
     }
   ];
 
@@ -163,9 +174,6 @@ const Products = () => {
                     alt={product.name}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {product.warranty} warranty
-                  </div>
                 </div>
                 
                 <div className="p-6">
