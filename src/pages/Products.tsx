@@ -27,7 +27,7 @@ const Products = () => {
       name: "Hydraulic Hose Fittings",
       description: "High-pressure hydraulic fittings for industrial applications",
       features: ["Pressure tested up to 6000 PSI", "Corrosion resistant", "Multiple thread types", "ISO certified"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&h=300&fit=crop",
       warranty: "2 years"
     },
     {
@@ -35,7 +35,7 @@ const Products = () => {
       name: "Teflon Hoses",
       description: "Chemical resistant PTFE lined hoses for extreme conditions",
       features: ["Temperature range: -65°C to +260°C", "Chemical resistant", "Non-stick surface", "FDA approved"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop",
       warranty: "1 year"
     },
     {
@@ -43,7 +43,7 @@ const Products = () => {
       name: "Stainless Steel Hoses",
       description: "Flexible stainless steel hoses for high-temperature applications",
       features: ["Corrosion resistant", "High temperature rating", "Flexible design", "Long service life"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
       warranty: "3 years"
     },
     {
@@ -51,7 +51,7 @@ const Products = () => {
       name: "Rubber Hoses",
       description: "Heavy-duty rubber hoses for various industrial applications",
       features: ["Oil resistant", "Weather resistant", "Multiple diameter options", "Reinforced construction"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop",
       warranty: "1 year"
     },
     {
@@ -59,7 +59,7 @@ const Products = () => {
       name: "Pipe Couplings",
       description: "Quick-connect couplings for efficient system assembly",
       features: ["Quick disconnect", "Leak-proof design", "Multiple sizes", "Easy installation"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
       warranty: "2 years"
     },
     {
@@ -67,7 +67,7 @@ const Products = () => {
       name: "Adaptors & Elbows",
       description: "Precision-machined adaptors and elbows for system connections",
       features: ["CNC machined", "Multiple angles", "Threaded connections", "Pressure tested"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&h=300&fit=crop",
       warranty: "2 years"
     },
     {
@@ -75,7 +75,7 @@ const Products = () => {
       name: "Flanges",
       description: "Heavy-duty flanges for pipe and equipment connections",
       features: ["Forged construction", "Standard dimensions", "Gasket surfaces", "Multiple materials"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
       warranty: "5 years"
     },
     {
@@ -83,7 +83,7 @@ const Products = () => {
       name: "Mait Piling Rig Spare Parts",
       description: "Genuine and compatible spare parts for Mait piling rigs",
       features: ["OEM quality", "Direct fit", "Extensive inventory", "Fast delivery"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop",
       warranty: "1 year"
     },
     {
@@ -91,7 +91,7 @@ const Products = () => {
       name: "Compressor Attachments",
       description: "High-performance attachments for compressor systems",
       features: ["Universal mounting", "Durable construction", "Easy maintenance", "Performance optimized"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&h=300&fit=crop",
       warranty: "2 years"
     },
     {
@@ -99,7 +99,7 @@ const Products = () => {
       name: "Excavator Attachments",
       description: "Specialized attachments for excavator operations",
       features: ["Heavy-duty design", "Compatible mounting", "Wear resistant", "Field tested"],
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
       warranty: "2 years"
     }
   ];
