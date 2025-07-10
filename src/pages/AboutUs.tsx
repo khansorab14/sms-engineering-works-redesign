@@ -10,6 +10,10 @@ import {
   Star,
   Menu,
   X,
+  Target,
+  Eye,
+  Lightbulb,
+  Handshake,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -116,11 +120,11 @@ const AboutUs = () => {
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center animate-slide-up">
               Our Story
             </h3>
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div>
+              <div className="animate-slide-left">
                 <p className="text-base md:text-lg text-gray-600 mb-6">
                   SMS Engineering Works has been serving Mumbai's industrial
                   sector with dedication and expertise. Located in the heart of
@@ -134,7 +138,7 @@ const AboutUs = () => {
                   Contact Us on WhatsApp
                 </button>
               </div>
-              <div className="bg-gray-100 p-6 md:p-8 rounded-xl">
+              <div className="bg-gray-100 p-6 md:p-8 rounded-xl animate-slide-right">
                 <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                   Our Values
                 </h4>
@@ -162,19 +166,19 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us - New Section */}
       <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-up">
               Why Choose Us?
             </h3>
-            <p className="text-lg md:text-xl text-gray-600">
+            <p className="text-lg md:text-xl text-gray-600 animate-fade-in">
               We deliver excellence in every aspect
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg card-hover text-center">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg card-hover text-center animate-scale-in">
               <Users className="w-12 h-12 text-red-600 mx-auto mb-4" />
               <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
                 Expert Team
@@ -183,7 +187,7 @@ const AboutUs = () => {
                 Highly skilled professionals with years of experience
               </p>
             </div>
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg card-hover text-center">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg card-hover text-center animate-scale-in" style={{animationDelay: '0.2s'}}>
               <Award className="w-12 h-12 text-red-600 mx-auto mb-4" />
               <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
                 Quality Assurance
@@ -192,7 +196,7 @@ const AboutUs = () => {
                 Premium quality work with guaranteed results
               </p>
             </div>
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg card-hover text-center">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg card-hover text-center animate-scale-in" style={{animationDelay: '0.4s'}}>
               <Clock className="w-12 h-12 text-red-600 mx-auto mb-4" />
               <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
                 24/7 Service
@@ -205,14 +209,74 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Vision and Mission - New Section */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-up">
+                Our Vision & Mission
+              </h3>
+              <p className="text-lg md:text-xl text-gray-600 animate-fade-in">
+                Driving excellence through strategic partnerships
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12">
+              <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 md:p-8 rounded-xl animate-slide-left">
+                <div className="flex items-center mb-4">
+                  <Eye className="w-8 h-8 text-red-600 mr-3" />
+                  <h4 className="text-xl md:text-2xl font-bold text-gray-900">Our Vision</h4>
+                </div>
+                <p className="text-base md:text-lg text-gray-700">
+                  To be the preferred strategic partner providing comprehensive support services to the manufacturing industries. As we expand into emerging markets, we bring our expertise in offering high-quality solutions to our customers.
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-8 rounded-xl animate-slide-right">
+                <div className="flex items-center mb-4">
+                  <Target className="w-8 h-8 text-red-600 mr-3" />
+                  <h4 className="text-xl md:text-2xl font-bold text-gray-900">Our Mission</h4>
+                </div>
+                <p className="text-base md:text-lg text-gray-700">
+                  Our commitment to our employees makes us deliver likable, tailor-made solutions. Our goal is to go beyond being a business associate and be a value-creating strategic partner.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 animate-fade-in">
+                <div className="flex items-center mb-4">
+                  <Lightbulb className="w-8 h-8 text-red-600 mr-3" />
+                  <h4 className="text-lg md:text-xl font-bold text-gray-900">Innovation</h4>
+                </div>
+                <p className="text-gray-600">
+                  We continuously innovate to provide cutting-edge solutions that meet the evolving needs of our clients in the manufacturing sector.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="flex items-center mb-4">
+                  <Handshake className="w-8 h-8 text-red-600 mr-3" />
+                  <h4 className="text-lg md:text-xl font-bold text-gray-900">Partnership</h4>
+                </div>
+                <p className="text-gray-600">
+                  Building long-term relationships through trust, reliability, and exceptional service delivery that creates mutual value.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="gradient-black text-white py-12 md:py-20">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl md:text-4xl font-bold mb-6">Ready to Work With Us?</h3>
-          <p className="text-lg md:text-xl mb-8">
+          <h3 className="text-2xl md:text-4xl font-bold mb-6 animate-slide-up">Ready to Work With Us?</h3>
+          <p className="text-lg md:text-xl mb-8 animate-fade-in">
             Contact us today for professional engineering solutions
           </p>
-          <button onClick={handleWhatsAppClick} className="btn-primary">
+          <button onClick={handleWhatsAppClick} className="btn-primary animate-scale-in">
             Contact on WhatsApp
           </button>
         </div>
