@@ -15,10 +15,29 @@ const Gallery = () => {
     { id: "manufacturing", name: "Manufacturing" },
     { id: "piling", name: "Piling Projects" },
     { id: "equipment", name: "Equipment" },
-    { id: "marine", name: "Marine Services" }
+    { id: "marine", name: "Marine Services" },
+    { id: "mobile-van", name: "Mobile Van Service" }
   ];
 
   const galleryImages = [
+    {
+      category: "equipment",
+      src: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
+      title: "XCMG XR178E Piling Rig",
+      description: "Advanced XCMG XR178E piling rig in operation with expert technician"
+    },
+    {
+      category: "hydraulic",
+      src: "/lovable-uploads/8437f940-df26-4706-9409-7f041e6320e2.png",
+      title: "Hydraulic Fitting with Safety Cap",
+      description: "High-quality hydraulic fitting with protective yellow safety cap"
+    },
+    {
+      category: "equipment",
+      src: "/lovable-uploads/88862d2a-a13e-4c74-923c-741ae70c868d.png",
+      title: "Professional Hydraulic Crimping Machine",
+      description: "Blue industrial-grade hydraulic hose crimping machine with multi-die system"
+    },
     {
       category: "hydraulic",
       src: "/lovable-uploads/afd3c24a-563f-4e21-8544-d07809c74408.png",
@@ -46,8 +65,8 @@ const Gallery = () => {
     {
       category: "piling",
       src: "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png",
-      title: "XCMG 178E Piling Rig Operation",
-      description: "Advanced piling equipment in action"
+      title: "XCMG 178E Piling Operation",
+      description: "XCMG 178E piling rig in active construction operation"
     },
     {
       category: "equipment",
@@ -72,24 +91,6 @@ const Gallery = () => {
       src: "/lovable-uploads/dadd887c-2e8e-407f-a547-005213dab467.png",
       title: "Offshore Platform Services",
       description: "Hydraulic system maintenance on offshore platforms"
-    },
-    {
-      category: "manufacturing",
-      src: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
-      title: "CNC Machining Operations",
-      description: "Precision manufacturing of hydraulic components"
-    },
-    {
-      category: "hydraulic",
-      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-      title: "High Pressure Hoses",
-      description: "Industrial grade hydraulic hoses"
-    },
-    {
-      category: "equipment",
-      src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop",
-      title: "Crimping Machine",
-      description: "Hydraulic hose crimping equipment"
     }
   ];
 

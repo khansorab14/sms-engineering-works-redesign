@@ -37,9 +37,9 @@ const Index = () => {
   }, []);
 
   const heroImages = [
-    "/lovable-uploads/86523bc1-dabc-4474-9698-a90dea7611a6.png",
-    "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png",
-    "/lovable-uploads/59a6d687-aa42-4e6c-b3b1-fa05f538357c.png"
+    "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
+    "/lovable-uploads/88862d2a-a13e-4c74-923c-741ae70c868d.png",
+    "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png"
   ];
 
   useEffect(() => {
@@ -98,36 +98,36 @@ const Index = () => {
 
   const services = [
     {
-      title: "Hydraulic Hose Fittings",
-      description: "Complete range of hydraulic fittings, couplings, and adaptors",
+      title: "Hydraulic Hose Fittings & Manufacturing",
+      description: "BSP, JIC, METRIC, ORFS fittings and custom hose assemblies",
       image: "/lovable-uploads/739b83df-5c32-4ccc-b67e-9ee8c0ea3d8b.png"
+    },
+    {
+      title: "Battery-Operated Mobile Van Service",
+      description: "First in Maharashtra - On-site hydraulic hose crimping service",
+      image: "/lovable-uploads/88862d2a-a13e-4c74-923c-741ae70c868d.png"
     },
     {
       title: "XCMG 178E Piling Services",
       description: "Expert servicing and spare parts for piling rigs",
-      image: "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png"
-    },
-    {
-      title: "Marine Hydraulic Systems",
-      description: "Offshore platform and vessel hydraulic solutions",
-      image: "/lovable-uploads/59a6d687-aa42-4e6c-b3b1-fa05f538357c.png"
+      image: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png"
     }
   ];
 
   const equipmentSpecs = [
     {
-      name: "XCMG 178E",
+      name: "XCMG XR178E",
       type: "Heavy Duty Piling Rig",
       capacity: "Max 35m depth",
       features: ["Hydraulic rotary drive", "Advanced control system", "High torque capacity"],
-      image: "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png"
+      image: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png"
     },
     {
       name: "Hydraulic Crimping Machine",
-      type: "Hose Assembly Equipment",
+      type: "Mobile Van Equipment",
       capacity: "Multi-die system",
-      features: ["Precision crimping", "Safety features", "Multiple die sizes"],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop"
+      features: ["Battery operated", "On-site service", "Emergency response"],
+      image: "/lovable-uploads/88862d2a-a13e-4c74-923c-741ae70c868d.png"
     }
   ];
 
@@ -160,15 +160,27 @@ const Index = () => {
         
         <div className="container mx-auto px-4 text-center text-white relative z-10">
           <div className="max-w-4xl mx-auto">
+            {/* Company Logo */}
+            <div className="mb-8 animate-fade-in">
+              <img 
+                src="/lovable-uploads/93c710bd-3602-49f0-bc2b-127c016f8a94.png" 
+                alt="SMS Engineering Works Logo"
+                className="mx-auto mb-6 w-32 h-32 object-contain bg-white/10 rounded-xl p-4"
+              />
+            </div>
+            
             <div className="animate-fade-in">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
-                SMS ENGINEERING WORKS
+                S.M.S ENGINEERING WORKS
               </h1>
               <div className="text-xl md:text-2xl lg:text-3xl mb-4 animate-slide-left">
-                <span className="text-yellow-300">XCMG 178E</span> Piling Rig Specialists
+                <span className="text-yellow-300">Manufacturers & Service Providers</span> in Hydraulic Hoses & Fittings
+              </div>
+              <div className="bg-yellow-500 text-black px-6 py-3 rounded-lg inline-block font-semibold mb-6 animate-pulse">
+                📍 First in Maharashtra with battery-operated mobile van service
               </div>
               <p className="text-lg md:text-xl mb-8 animate-slide-right opacity-90">
-                Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs.
+                Professional engineering services provider in Mumbai, specializing in hydraulic solutions with 24/7 emergency mobile service and on-site repair capabilities.
               </p>
             </div>
             
@@ -185,7 +197,7 @@ const Index = () => {
                 className="btn-secondary flex items-center justify-center border-2 border-white transform hover:scale-105"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Contact on WhatsApp
+                Request Mobile Van Service
               </button>
             </div>
             
@@ -199,6 +211,46 @@ const Index = () => {
         {/* Animated scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ChevronDown className="w-8 h-8 text-white" />
+        </div>
+      </section>
+
+      {/* Mobile Van Service Highlight */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-slide-up">
+                🚐 Revolutionary Mobile Van Service
+              </h2>
+              <p className="text-xl animate-fade-in">
+                Battery-operated mobile van for on-site hydraulic hose crimping - First in Maharashtra!
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center animate-scale-in">
+                <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Battery Operated</h3>
+                <p>Fully self-sufficient mobile unit with battery-powered crimping equipment</p>
+              </div>
+              <div className="text-center animate-scale-in" style={{ animationDelay: "0.1s" }}>
+                <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🏃‍♂️</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">1-Hour Dispatch</h3>
+                <p>Emergency response team ready to dispatch within 1 hour</p>
+              </div>
+              <div className="text-center animate-scale-in" style={{ animationDelay: "0.2s" }}>
+                <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">📱</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Digital Tracking</h3>
+                <p>Real-time service tracking and reporting via tablets</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
