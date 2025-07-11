@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   Phone,
@@ -21,24 +20,28 @@ const Contact = () => {
     phone: "",
     company: "",
     service: "",
-    message: ""
+    message: "",
   });
 
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/919820209923", "_blank");
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const message = `Hi SMS Engineering Works,
 
 I'm interested in your services. Here are my details:
@@ -55,7 +58,9 @@ Please contact me to discuss further.
 
 Thank you!`;
 
-    const whatsappUrl = `https://wa.me/919820209923?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919820209923?text=${encodeURIComponent(
+      message
+    )}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -68,14 +73,14 @@ Thank you!`;
     "Pipe Connectors",
     "Equipment Servicing",
     "Custom Solutions",
-    "Other"
+    "Other",
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <FloatingCTA />
-      
+
       {/* Hero Section */}
       <section className="gradient-red text-white py-20">
         <div className="container mx-auto px-4">
@@ -118,7 +123,7 @@ Thank you!`;
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">
                       Email Address *
@@ -137,7 +142,7 @@ Thank you!`;
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">
@@ -156,7 +161,7 @@ Thank you!`;
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">
                       Company Name
@@ -174,7 +179,7 @@ Thank you!`;
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">
                     Service Required
@@ -193,7 +198,7 @@ Thank you!`;
                     ))}
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">
                     Message *
@@ -211,7 +216,7 @@ Thank you!`;
                     ></textarea>
                   </div>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center"
@@ -228,24 +233,29 @@ Thank you!`;
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
                   Get in Touch
                 </h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <MapPin className="w-6 h-6 text-red-600 mr-4 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
+                      <h4 className="font-semibold text-gray-900 mb-1">
+                        Address
+                      </h4>
                       <p className="text-gray-600">
                         Modi Compound Shop No. 6<br />
-                        Reay Road West, Mazgaon<br />
+                        Reay Road West, Mazgaon
+                        <br />
                         Mumbai, Maharashtra 400010
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <Phone className="w-6 h-6 text-red-600 mr-4 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
+                      <h4 className="font-semibold text-gray-900 mb-1">
+                        Phone
+                      </h4>
                       <button
                         onClick={handleWhatsAppClick}
                         className="text-gray-600 hover:text-red-600"
@@ -254,21 +264,26 @@ Thank you!`;
                       </button>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <Mail className="w-6 h-6 text-red-600 mr-4 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                      <p className="text-gray-600">info@smsengineering.com</p>
+                      <h4 className="font-semibold text-gray-900 mb-1">
+                        Email
+                      </h4>
+                      <p className="text-gray-600">smsengi111@gmail.com</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <Clock className="w-6 h-6 text-red-600 mr-4 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Working Hours</h4>
+                      <h4 className="font-semibold text-gray-900 mb-1">
+                        Working Hours
+                      </h4>
                       <p className="text-gray-600">
-                        24 Hours - 7 Days a Week<br />
+                        24 Hours - 7 Days a Week
+                        <br />
                         Emergency services available
                       </p>
                     </div>
@@ -278,9 +293,12 @@ Thank you!`;
 
               {/* Quick Contact */}
               <div className="bg-gradient-to-r from-red-600 to-red-700 p-8 rounded-xl text-white">
-                <h3 className="text-2xl font-bold mb-4">Need Immediate Help?</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  Need Immediate Help?
+                </h3>
                 <p className="mb-6 opacity-90">
-                  For urgent requirements or emergency services, contact us directly on WhatsApp
+                  For urgent requirements or emergency services, contact us
+                  directly on WhatsApp
                 </p>
                 <button
                   onClick={handleWhatsAppClick}
@@ -306,14 +324,18 @@ Thank you!`;
               Located in the heart of Mumbai's industrial district
             </p>
           </div>
-          
-          <div className="bg-gray-300 h-96 rounded-xl flex items-center justify-center">
-            <div className="text-center text-gray-600">
-              <MapPin className="w-16 h-16 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">SMS Engineering Works</h3>
-              <p>Modi Compound, Reay Road West, Mazgaon, Mumbai</p>
-              <p className="text-sm mt-2">Interactive map will be integrated here</p>
-            </div>
+
+          <div className="h-96 rounded-xl overflow-hidden shadow-md">
+            <iframe
+              title="SMS Engineering Works Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.64393987787!2d72.75996210000001!3d18.97932110000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cfff8c0620e3%3A0x3a4444c112428703!2sModi%20Compound%20Shop%20No.%206%20Reay%20Road%20West%20Mumbai%20400010%20mazgaon%20mumbai-400010%209820209923!5e0!3m2!1sen!2sin!4v1720686780382!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>

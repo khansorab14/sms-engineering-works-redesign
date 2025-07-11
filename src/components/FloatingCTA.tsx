@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Phone, MessageCircle, Mail } from "lucide-react";
 
@@ -12,7 +11,7 @@ const FloatingCTA = () => {
   };
 
   const handleEmailClick = () => {
-    window.open("mailto:info@smsengineering.com", "_blank");
+    window.open("mailto:smsengi111@gmail.com", "_blank");
   };
 
   return (
@@ -25,7 +24,7 @@ const FloatingCTA = () => {
       >
         <MessageCircle className="w-6 h-6" />
       </button>
-      
+
       {/* Call */}
       <button
         onClick={handleCallClick}
@@ -34,7 +33,7 @@ const FloatingCTA = () => {
       >
         <Phone className="w-6 h-6" />
       </button>
-      
+
       {/* Email */}
       <button
         onClick={handleEmailClick}

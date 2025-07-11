@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
@@ -22,20 +21,23 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="animate-slide-left">
-            <h1 className="text-2xl md:text-3xl font-bold text-gradient">
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">
               SMS ENGINEERING WORKS
             </h1>
+
             <p className="text-gray-600 text-xs md:text-sm">
               Professional Engineering Services
             </p>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             <Link
               to="/"
               className={`font-semibold ${
-                isActive("/") ? "text-red-600" : "text-gray-700 hover:text-red-600"
+                isActive("/")
+                  ? "text-red-600"
+                  : "text-gray-700 hover:text-red-600"
               }`}
             >
               Home
@@ -43,7 +45,9 @@ const Header = () => {
             <Link
               to="/about"
               className={`font-semibold ${
-                isActive("/about") ? "text-red-600" : "text-gray-700 hover:text-red-600"
+                isActive("/about")
+                  ? "text-red-600"
+                  : "text-gray-700 hover:text-red-600"
               }`}
             >
               About
@@ -51,7 +55,9 @@ const Header = () => {
             <Link
               to="/products"
               className={`font-semibold ${
-                isActive("/products") ? "text-red-600" : "text-gray-700 hover:text-red-600"
+                isActive("/products")
+                  ? "text-red-600"
+                  : "text-gray-700 hover:text-red-600"
               }`}
             >
               Products
@@ -59,7 +65,9 @@ const Header = () => {
             <Link
               to="/services"
               className={`font-semibold ${
-                isActive("/services") ? "text-red-600" : "text-gray-700 hover:text-red-600"
+                isActive("/services")
+                  ? "text-red-600"
+                  : "text-gray-700 hover:text-red-600"
               }`}
             >
               Services
@@ -67,7 +75,9 @@ const Header = () => {
             <Link
               to="/gallery"
               className={`font-semibold ${
-                isActive("/gallery") ? "text-red-600" : "text-gray-700 hover:text-red-600"
+                isActive("/gallery")
+                  ? "text-red-600"
+                  : "text-gray-700 hover:text-red-600"
               }`}
             >
               Gallery
@@ -75,7 +85,9 @@ const Header = () => {
             <Link
               to="/contact"
               className={`font-semibold ${
-                isActive("/contact") ? "text-red-600" : "text-gray-700 hover:text-red-600"
+                isActive("/contact")
+                  ? "text-red-600"
+                  : "text-gray-700 hover:text-red-600"
               }`}
             >
               Contact
@@ -90,11 +102,12 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={toggleMobileMenu}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button className="md:hidden p-2" onClick={toggleMobileMenu}>
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -102,50 +115,74 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4 pt-4">
-              <Link 
-                to="/" 
-                className={`font-semibold ${isActive("/") ? "text-red-600" : "text-gray-700 hover:text-red-600"}`}
+              <Link
+                to="/"
+                className={`font-semibold ${
+                  isActive("/")
+                    ? "text-red-600"
+                    : "text-gray-700 hover:text-red-600"
+                }`}
                 onClick={toggleMobileMenu}
               >
                 Home
               </Link>
-              <Link 
-                to="/about" 
-                className={`font-semibold ${isActive("/about") ? "text-red-600" : "text-gray-700 hover:text-red-600"}`}
+              <Link
+                to="/about"
+                className={`font-semibold ${
+                  isActive("/about")
+                    ? "text-red-600"
+                    : "text-gray-700 hover:text-red-600"
+                }`}
                 onClick={toggleMobileMenu}
               >
                 About
               </Link>
-              <Link 
-                to="/products" 
-                className={`font-semibold ${isActive("/products") ? "text-red-600" : "text-gray-700 hover:text-red-600"}`}
+              <Link
+                to="/products"
+                className={`font-semibold ${
+                  isActive("/products")
+                    ? "text-red-600"
+                    : "text-gray-700 hover:text-red-600"
+                }`}
                 onClick={toggleMobileMenu}
               >
                 Products
               </Link>
-              <Link 
-                to="/services" 
-                className={`font-semibold ${isActive("/services") ? "text-red-600" : "text-gray-700 hover:text-red-600"}`}
+              <Link
+                to="/services"
+                className={`font-semibold ${
+                  isActive("/services")
+                    ? "text-red-600"
+                    : "text-gray-700 hover:text-red-600"
+                }`}
                 onClick={toggleMobileMenu}
               >
                 Services
               </Link>
-              <Link 
-                to="/gallery" 
-                className={`font-semibold ${isActive("/gallery") ? "text-red-600" : "text-gray-700 hover:text-red-600"}`}
+              <Link
+                to="/gallery"
+                className={`font-semibold ${
+                  isActive("/gallery")
+                    ? "text-red-600"
+                    : "text-gray-700 hover:text-red-600"
+                }`}
                 onClick={toggleMobileMenu}
               >
                 Gallery
               </Link>
-              <Link 
-                to="/contact" 
-                className={`font-semibold ${isActive("/contact") ? "text-red-600" : "text-gray-700 hover:text-red-600"}`}
+              <Link
+                to="/contact"
+                className={`font-semibold ${
+                  isActive("/contact")
+                    ? "text-red-600"
+                    : "text-gray-700 hover:text-red-600"
+                }`}
                 onClick={toggleMobileMenu}
               >
                 Contact
               </Link>
-              <button 
-                onClick={handleWhatsAppClick} 
+              <button
+                onClick={handleWhatsAppClick}
                 className="flex items-center text-gray-700 hover:text-red-600 justify-start"
               >
                 <Phone className="w-4 h-4 mr-2" />

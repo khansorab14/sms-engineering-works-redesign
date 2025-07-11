@@ -1,6 +1,12 @@
-
 import React, { useState, useEffect } from "react";
-import { ChevronDown, PlayCircle, Phone, MapPin, Timer, Settings } from "lucide-react";
+import {
+  ChevronDown,
+  PlayCircle,
+  Phone,
+  MapPin,
+  Timer,
+  Settings,
+} from "lucide-react";
 import HeroModal from "../HeroModal";
 
 const HeroSection = () => {
@@ -15,8 +21,10 @@ const HeroSection = () => {
   }, []);
 
   const heroImages = [
+    "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
+    "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png",
+    "/lovable-uploads/dadd887c-2e8e-407f-a547-005213dab467.png",
     "/lovable-uploads/739b83df-5c32-4ccc-b67e-9ee8c0ea3d8b.png",
-    "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png"
   ];
 
   useEffect(() => {
@@ -37,18 +45,28 @@ const HeroSection = () => {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 via-blue-600/10 to-gray-900/30"></div>
           <div className="absolute top-20 left-10 w-20 h-20 bg-red-500/10 rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-32 h-32 bg-blue-500/10 rounded-full animate-bounce" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute bottom-40 left-20 w-16 h-16 bg-yellow-500/10 rounded-full animate-pulse" style={{ animationDelay: "2s" }}></div>
-          <div className="absolute bottom-20 right-40 w-24 h-24 bg-green-500/10 rounded-full animate-bounce" style={{ animationDelay: "0.5s" }}></div>
+          <div
+            className="absolute top-40 right-20 w-32 h-32 bg-blue-500/10 rounded-full animate-bounce"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute bottom-40 left-20 w-16 h-16 bg-yellow-500/10 rounded-full animate-pulse"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute bottom-20 right-40 w-24 h-24 bg-green-500/10 rounded-full animate-bounce"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
         </div>
-        
+
+        {/* Background Image Slider */}
         {/* Background Image Slider */}
         <div className="absolute inset-0">
           {heroImages.map((image, index) => (
             <div
               key={index}
               className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentImageIndex ? "opacity-10" : "opacity-0"
+                index === currentImageIndex ? "opacity-70" : "opacity-0"
               }`}
               style={{
                 backgroundImage: `url(${image})`,
@@ -58,35 +76,48 @@ const HeroSection = () => {
               }}
             />
           ))}
+
+          {/* 👇 This is the dark overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 text-center text-white relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="animate-fade-in space-y-6">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
                 S.M.S ENGINEERING WORKS
               </h1>
-              
+
               <div className="text-2xl md:text-3xl lg:text-4xl mb-6 animate-slide-left">
-                <span className="text-yellow-300 font-semibold">Manufacturers & Service Providers</span>
+                <span className="text-yellow-300 font-semibold">
+                  Manufacturers & Service Providers
+                </span>
                 <br />
-                <span className="text-gray-200">in Hydraulic Hoses & Fittings</span>
+                <span className="text-gray-200">
+                  in Hydraulic Hoses & Fittings
+                </span>
                 <br />
-                <span className="text-blue-300 text-xl md:text-2xl">+ XCMG 178E Piling Services</span>
+                <span className="text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-xl md:text-2xl font-bold ">
+                  + XCMG 178E Piling Services
+                </span>
               </div>
-              
+
               <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-8 py-4 rounded-2xl inline-block font-bold mb-8 animate-pulse shadow-lg">
                 <div className="flex items-center space-x-2">
-                  <span>🚐 Revolutionary Battery-Operated Mobile Van for Complete On-Site Hydraulic Solutions</span>
+                  <span>
+                    🚐 Revolutionary Battery-Operated Mobile Van for Complete
+                    On-Site Hydraulic Solutions
+                  </span>
                 </div>
               </div>
-              
+
               <p className="text-xl md:text-2xl mb-8 animate-slide-right opacity-90 max-w-4xl mx-auto leading-relaxed">
-                Professional engineering services with 24/7 emergency mobile service, on-site repair capabilities, 
-                and specialized piling solutions for industrial needs across Mumbai and Maharashtra.
+                Professional engineering services with 24/7 emergency mobile
+                service, on-site repair capabilities, and specialized piling
+                solutions for industrial needs across Mumbai and Maharashtra.
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12 animate-scale-in">
               <button
                 onClick={() => setIsModalOpen(true)}
@@ -103,7 +134,7 @@ const HeroSection = () => {
                 Request Mobile Van
               </button>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm animate-fade-in">
               <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <MapPin className="w-5 h-5 mr-2 text-red-400" />
@@ -120,7 +151,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
             <ChevronDown className="w-8 h-8 text-white" />

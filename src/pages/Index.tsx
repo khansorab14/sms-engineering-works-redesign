@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -14,10 +13,10 @@ import CTASection from "../components/sections/CTASection";
 const Index = () => {
   useEffect(() => {
     // Add smooth scrolling behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-    
+    document.documentElement.style.scrollBehavior = "smooth";
+
     return () => {
-      document.documentElement.style.scrollBehavior = 'auto';
+      document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
 
@@ -25,7 +24,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <FloatingCTA />
-      
+
       <HeroSection />
       <MobileVanSection />
       <FeaturesSection />

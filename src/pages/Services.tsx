@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Wrench,
@@ -24,34 +23,65 @@ const Services = () => {
   const pilingServices = [
     {
       title: "Bridge Piling",
-      description: "Specialized foundation solutions for bridge construction projects",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop",
-      features: ["Deep foundation systems", "Load bearing analysis", "Seismic resistance", "Weather protection"]
+      description:
+        "Specialized foundation solutions for bridge construction projects",
+      image: "https://www.nan-steel.com/Upload/170970607120.png",
+      features: [
+        "Deep foundation systems",
+        "Load bearing analysis",
+        "Seismic resistance",
+        "Weather protection",
+      ],
     },
     {
       title: "Residential Piling",
-      description: "Foundation services for residential and commercial buildings",
-      image: "https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=500&h=300&fit=crop",
-      features: ["Soil analysis", "Foundation design", "Quality assurance", "Timely completion"]
+      description:
+        "Foundation services for residential and commercial buildings",
+      image:
+        "https://www.pilingexperts.com.au/wp-content/uploads/2024/08/piling-methods-jpg.webp",
+      features: [
+        "Soil analysis",
+        "Foundation design",
+        "Quality assurance",
+        "Timely completion",
+      ],
     },
     {
       title: "DMC Piling",
       description: "Deep Mixing Column techniques for soil stabilization",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&h=300&fit=crop",
-      features: ["Soil stabilization", "Environmental friendly", "Cost effective", "Proven technology"]
+      image:
+        "https://www.dhinapilefoundation.com/assets/images/innerbanner/driven-pile-inner.jpg",
+      features: [
+        "Soil stabilization",
+        "Environmental friendly",
+        "Cost effective",
+        "Proven technology",
+      ],
     },
     {
       title: "Tripod Piling",
       description: "Specialized tripod drilling for challenging terrains",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=300&fit=crop",
-      features: ["Difficult access areas", "Precision drilling", "Minimal disruption", "Expert execution"]
+      image:
+        "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1200,h=630,fit=crop,f=jpeg/AE0PRryq23SV9WPn/piling-rigging-soil-testing-services-mumbai-liftingandlashingsolutionsindia-A1a5lqKQkyIRWbr1.jpg",
+      features: [
+        "Difficult access areas",
+        "Precision drilling",
+        "Minimal disruption",
+        "Expert execution",
+      ],
     },
     {
       title: "Rotary Piling",
       description: "Advanced rotary drilling for various foundation types",
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&h=300&fit=crop",
-      features: ["Continuous flight auger", "Large diameter piles", "High capacity", "Efficient installation"]
-    }
+      image:
+        "https://image.made-in-china.com/202f0j00cuebTRmnENrV/Track-Hydraulic-Mini-Bored-Pile-Rotary-Piling-Drilling-Rig-Machine.webp",
+      features: [
+        "Continuous flight auger",
+        "Large diameter piles",
+        "High capacity",
+        "Efficient installation",
+      ],
+    },
   ];
 
   const pilingRigsAndCranes = [
@@ -59,70 +89,99 @@ const Services = () => {
       name: "XCMG 178E",
       type: "Heavy Duty Piling Rig",
       capacity: "Max 35m depth",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
-      features: ["High torque capacity", "Advanced hydraulic system", "GPS positioning", "Automated drilling"]
+      image: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
+      features: [
+        "High torque capacity",
+        "Advanced hydraulic system",
+        "GPS positioning",
+        "Automated drilling",
+      ],
     },
     {
       name: "Mait HR180",
-      type: "Rotary Drilling Rig", 
+      type: "Rotary Drilling Rig",
       capacity: "Max 40m depth",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-      features: ["Telescopic mast", "Multi-purpose drilling", "High efficiency", "Compact design"]
+      image:
+        "https://crownlifters.com/wp-content/uploads/2019/05/Mait-HR-180-CP-Piling-Rig-1.jpg",
+      features: [
+        "Telescopic mast",
+        "Multi-purpose drilling",
+        "High efficiency",
+        "Compact design",
+      ],
     },
     {
       name: "Sunward 175",
       type: "Multi-Purpose Rig",
-      capacity: "Max 30m depth", 
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop",
-      features: ["Versatile applications", "Easy transportation", "Quick setup", "Reliable performance"]
+      capacity: "Max 30m depth",
+      image:
+        "https://media.licdn.com/dms/image/v2/D4D22AQEX0elOqVB1Ow/feedshare-shrink_800/feedshare-shrink_800/0/1723817729104?e=2147483647&v=beta&t=Q4Qs-f3YJBvyl7z517aQOIUXTNjkzX_jxWS3ShOpJ-g",
+      features: [
+        "Versatile applications",
+        "Easy transportation",
+        "Quick setup",
+        "Reliable performance",
+      ],
     },
     {
       name: "XCMG 210",
       type: "Advanced Piling Rig",
       capacity: "Max 45m depth",
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop",
-      features: ["Large diameter piles", "High precision", "Automated controls", "Energy efficient"]
-    }
+      image:
+        "https://image.made-in-china.com/2f0j00TYqUfFSdbMuk/XCMG-Professional-Xr220d-Used-Piling-Machine-Crawler-Rotary-Drilling-Rig.webp",
+      features: [
+        "Large diameter piles",
+        "High precision",
+        "Automated controls",
+        "Energy efficient",
+      ],
+    },
   ];
 
   const whyChooseUs = [
     {
       icon: Award,
       title: "Industry Expertise",
-      description: "25+ years of experience in hydraulic and piling solutions with proven track record"
+      description:
+        "25+ years of experience in hydraulic and piling solutions with proven track record",
     },
     {
       icon: Shield,
       title: "National Standards",
-      description: "All work complies with IS codes and international standards for quality assurance"
+      description:
+        "All work complies with IS codes and international standards for quality assurance",
     },
     {
       icon: Users,
       title: "Trained Team",
-      description: "In-house trained technicians and engineers with specialized certifications"
+      description:
+        "In-house trained technicians and engineers with specialized certifications",
     },
     {
       icon: Zap,
       title: "Advanced Equipment",
-      description: "State-of-the-art machinery and tools for efficient project execution"
+      description:
+        "State-of-the-art machinery and tools for efficient project execution",
     },
     {
       icon: Clock,
       title: "24/7 Support",
-      description: "Round-the-clock service availability for emergency and scheduled maintenance"
+      description:
+        "Round-the-clock service availability for emergency and scheduled maintenance",
     },
     {
       icon: Settings,
       title: "Custom Solutions",
-      description: "Tailored solutions designed to meet specific project requirements and challenges"
-    }
+      description:
+        "Tailored solutions designed to meet specific project requirements and challenges",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <FloatingCTA />
-      
+
       {/* Hero Section */}
       <section className="gradient-red text-white py-20">
         <div className="container mx-auto px-4">
@@ -131,7 +190,8 @@ const Services = () => {
               Our Services
             </h1>
             <p className="text-xl md:text-2xl mb-8 animate-fade-in">
-              Comprehensive piling and hydraulic solutions for all your industrial needs
+              Comprehensive piling and hydraulic solutions for all your
+              industrial needs
             </p>
           </div>
         </div>
@@ -145,19 +205,20 @@ const Services = () => {
               Piling Services
             </h2>
             <p className="text-xl text-gray-600">
-              Professional foundation solutions with advanced equipment and expertise
+              Professional foundation solutions with advanced equipment and
+              expertise
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pilingServices.map((service, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white rounded-xl shadow-lg overflow-hidden card-hover"
               >
                 <div className="h-48 bg-gray-200 relative overflow-hidden">
-                  <img 
-                    src={service.image} 
+                  <img
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
@@ -166,12 +227,13 @@ const Services = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    {service.description}
-                  </p>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                      <li
+                        key={featureIndex}
+                        className="flex items-center text-sm text-gray-600"
+                      >
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
@@ -201,19 +263,20 @@ const Services = () => {
               Piling Rigs & Cranes
             </h3>
             <p className="text-xl text-gray-600">
-              State-of-the-art piling equipment for efficient and precise operations
+              State-of-the-art piling equipment for efficient and precise
+              operations
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {pilingRigsAndCranes.map((machine, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white rounded-xl shadow-lg overflow-hidden card-hover"
               >
                 <div className="h-48 bg-gray-200 relative overflow-hidden">
-                  <img 
-                    src={machine.image} 
+                  <img
+                    src={machine.image}
                     alt={machine.name}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
@@ -230,7 +293,10 @@ const Services = () => {
                   </p>
                   <ul className="space-y-1">
                     {machine.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                      <li
+                        key={featureIndex}
+                        className="flex items-center text-sm text-gray-600"
+                      >
                         <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
@@ -254,10 +320,10 @@ const Services = () => {
               Your trusted partner for industrial excellence and reliability
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseUs.map((reason, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white p-8 rounded-xl shadow-lg card-hover text-center"
               >
@@ -265,9 +331,7 @@ const Services = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {reason.title}
                 </h3>
-                <p className="text-gray-600">
-                  {reason.description}
-                </p>
+                <p className="text-gray-600">{reason.description}</p>
               </div>
             ))}
           </div>
@@ -286,7 +350,7 @@ const Services = () => {
                 Complete hydraulic solutions from design to manufacturing
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <Construction className="w-12 h-12 text-red-600 mb-4" />
@@ -316,7 +380,7 @@ const Services = () => {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <Truck className="w-12 h-12 text-red-600 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -359,10 +423,7 @@ const Services = () => {
           <p className="text-xl mb-8 opacity-90">
             Contact us today for professional consultation and quality solutions
           </p>
-          <button
-            onClick={handleWhatsAppClick}
-            className="btn-primary"
-          >
+          <button onClick={handleWhatsAppClick} className="btn-primary">
             Contact on WhatsApp
           </button>
         </div>
