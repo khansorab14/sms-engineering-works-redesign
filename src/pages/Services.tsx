@@ -9,6 +9,8 @@ import {
   Award,
   Users,
   Zap,
+  Construction,
+  Truck,
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -23,40 +25,64 @@ const Services = () => {
     {
       title: "Bridge Piling",
       description: "Specialized foundation solutions for bridge construction projects",
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop",
       features: ["Deep foundation systems", "Load bearing analysis", "Seismic resistance", "Weather protection"]
     },
     {
       title: "Residential Piling",
       description: "Foundation services for residential and commercial buildings",
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=500&h=300&fit=crop",
       features: ["Soil analysis", "Foundation design", "Quality assurance", "Timely completion"]
     },
     {
       title: "DMC Piling",
       description: "Deep Mixing Column techniques for soil stabilization",
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&h=300&fit=crop",
       features: ["Soil stabilization", "Environmental friendly", "Cost effective", "Proven technology"]
     },
     {
       title: "Tripod Piling",
       description: "Specialized tripod drilling for challenging terrains",
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=300&fit=crop",
       features: ["Difficult access areas", "Precision drilling", "Minimal disruption", "Expert execution"]
     },
     {
       title: "Rotary Piling",
       description: "Advanced rotary drilling for various foundation types",
-      image: "/lovable-uploads/b7673d71-4942-41ba-a0f5-cbfdabefab21.png",
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&h=300&fit=crop",
       features: ["Continuous flight auger", "Large diameter piles", "High capacity", "Efficient installation"]
     }
   ];
 
-  const machinery = [
-    { name: "XCMG 178E", type: "Heavy Duty Piling Rig", capacity: "Max 35m depth" },
-    { name: "Mait HR180", type: "Rotary Drilling Rig", capacity: "Max 40m depth" },
-    { name: "Sunward 175", type: "Multi-Purpose Rig", capacity: "Max 30m depth" },
-    { name: "Casagrande B125", type: "Foundation Rig", capacity: "Max 45m depth" }
+  const pilingRigsAndCranes = [
+    {
+      name: "XCMG 178E",
+      type: "Heavy Duty Piling Rig",
+      capacity: "Max 35m depth",
+      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
+      features: ["High torque capacity", "Advanced hydraulic system", "GPS positioning", "Automated drilling"]
+    },
+    {
+      name: "Mait HR180",
+      type: "Rotary Drilling Rig", 
+      capacity: "Max 40m depth",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      features: ["Telescopic mast", "Multi-purpose drilling", "High efficiency", "Compact design"]
+    },
+    {
+      name: "Sunward 175",
+      type: "Multi-Purpose Rig",
+      capacity: "Max 30m depth", 
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop",
+      features: ["Versatile applications", "Easy transportation", "Quick setup", "Reliable performance"]
+    },
+    {
+      name: "XCMG 210",
+      type: "Advanced Piling Rig",
+      capacity: "Max 45m depth",
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop",
+      features: ["Large diameter piles", "High precision", "Automated controls", "Energy efficient"]
+    }
   ];
 
   const whyChooseUs = [
@@ -164,34 +190,53 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Machinery Section */}
+      {/* Piling Rigs & Cranes Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Advanced Machinery
+              Our Machinery & Equipment
             </h2>
+            <h3 className="text-2xl font-semibold text-red-600 mb-4">
+              Piling Rigs & Cranes
+            </h3>
             <p className="text-xl text-gray-600">
-              State-of-the-art equipment for efficient and precise piling operations
+              State-of-the-art piling equipment for efficient and precise operations
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {machinery.map((machine, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {pilingRigsAndCranes.map((machine, index) => (
               <div 
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-lg text-center card-hover"
+                className="bg-white rounded-xl shadow-lg overflow-hidden card-hover"
               >
-                <Wrench className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  {machine.name}
-                </h3>
-                <p className="text-gray-600 mb-2">
-                  {machine.type}
-                </p>
-                <p className="text-sm text-red-600 font-semibold">
-                  {machine.capacity}
-                </p>
+                <div className="h-48 bg-gray-200 relative overflow-hidden">
+                  <img 
+                    src={machine.image} 
+                    alt={machine.name}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {machine.name}
+                  </h3>
+                  <p className="text-gray-600 mb-2 font-medium">
+                    {machine.type}
+                  </p>
+                  <p className="text-red-600 font-semibold mb-4">
+                    {machine.capacity}
+                  </p>
+                  <ul className="space-y-1">
+                    {machine.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -244,6 +289,7 @@ const Services = () => {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-lg">
+                <Construction className="w-12 h-12 text-red-600 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Manufacturing Services
                 </h3>
@@ -272,6 +318,7 @@ const Services = () => {
               </div>
               
               <div className="bg-white p-8 rounded-xl shadow-lg">
+                <Truck className="w-12 h-12 text-red-600 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Service & Maintenance
                 </h3>
