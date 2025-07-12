@@ -1,119 +1,126 @@
 
 import React from "react";
+import { Shield, Award, Users, Clock, Globe, Target } from "lucide-react";
 import { motion } from "framer-motion";
-import { Shield, Zap, Settings, Users, Award, Clock } from "lucide-react";
 
 const FeaturesSection = () => {
+  const features = [
+    {
+      icon: Shield,
+      title: "Quality Assurance",
+      description: "ISO certified manufacturing with international standards",
+      color: "text-green-600"
+    },
+    {
+      icon: Award,
+      title: "Industry Expertise",
+      description: "25+ years of experience in hydraulic and piling solutions",
+      color: "text-blue-600"
+    },
+    {
+      icon: Users,
+      title: "Expert Team",
+      description: "In-house trained technicians and engineers",
+      color: "text-purple-600"
+    },
+    {
+      icon: Clock,
+      title: "24/7 Support",
+      description: "Round-the-clock service and emergency support",
+      color: "text-red-600"
+    },
+    {
+      icon: Globe,
+      title: "Marine Services",
+      description: "Offshore and marine hydraulic system expertise",
+      color: "text-cyan-600"
+    },
+    {
+      icon: Target,
+      title: "Precision Manufacturing",
+      description: "CNC machined components with exact specifications",
+      color: "text-orange-600"
+    }
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.3,
+        delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring" as const,
+        type: "spring",
         stiffness: 100,
       },
     },
   };
 
-  const features = [
-    {
-      icon: Shield,
-      title: "Quality Assurance",
-      description: "Premium materials and rigorous testing for reliability",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      icon: Zap,
-      title: "Quick Response",
-      description: "Rapid deployment and emergency service availability",
-      color: "from-yellow-500 to-yellow-600"
-    },
-    {
-      icon: Settings,
-      title: "Expert Solutions",
-      description: "Customized engineering solutions for complex challenges",
-      color: "from-green-500 to-green-600"
-    },
-    {
-      icon: Users,
-      title: "Professional Team",
-      description: "Highly skilled technicians and engineers",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      icon: Award,
-      title: "Industry Leading",
-      description: "25+ years of excellence in hydraulic solutions",
-      color: "from-red-500 to-red-600"
-    },
-    {
-      icon: Clock,
-      title: "24/7 Service",
-      description: "Round-the-clock availability for urgent needs",
-      color: "from-indigo-500 to-indigo-600"
-    }
-  ];
-
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <motion.div
+        <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent mb-6">
-            Why Choose SMS Engineering?
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Why Choose SMS Engineering Works?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Experience excellence in hydraulic solutions with our comprehensive range of services
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            We are the preferred strategic partner providing comprehensive support services to the manufacturing industries across Mumbai and Maharashtra.
           </p>
         </motion.div>
-
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+        
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {features.map((feature, index) => (
-            <motion.div
+            <motion.div 
               key={index}
-              className="group"
+              className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl border-t-4 border-red-500 relative overflow-hidden"
               variants={itemVariants}
               whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)" 
+                y: -8,
+                transition: { type: "spring", stiffness: 300 }
               }}
-              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full">
+              {/* Animated background */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-red-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ scale: 0 }}
+                whileHover={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+              
+              <div className="relative z-10">
                 <motion.div 
-                  className={`bg-gradient-to-r ${feature.color} w-14 h-14 rounded-lg flex items-center justify-center mb-4`}
-                  whileHover={{ rotate: 360 }}
+                  className="relative mb-4"
+                  whileHover={{ scale: 1.1, rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <feature.icon className="w-7 h-7 text-white" />
+                  <feature.icon className={`w-12 h-12 ${feature.color} mx-auto`} />
                 </motion.div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 text-sm">
                   {feature.description}
                 </p>
               </div>
