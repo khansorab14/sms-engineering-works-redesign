@@ -72,7 +72,7 @@ const Header = () => {
             >
               Services
             </Link>
-            <Link
+            {/* <Link
               to="/gallery"
               className={`font-semibold ${
                 isActive("/gallery")
@@ -81,7 +81,7 @@ const Header = () => {
               }`}
             >
               Gallery
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
               className={`font-semibold ${

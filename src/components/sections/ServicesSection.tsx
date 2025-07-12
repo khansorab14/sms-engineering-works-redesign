@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,20 +5,25 @@ import { Link } from "react-router-dom";
 const ServicesSection = () => {
   const services = [
     {
+      title: "XCMG 178E Piling Services",
+      description:
+        "We specialize in delivering end to end piling, and foundation engineering services across Mumbai, Navi Mumbai and Maharashtra. Our solutions are designed for bridges, high rise structures, residential complexes and industrial infrastructure.",
+      image: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
+    },
+    {
       title: "Hydraulic Hose Fittings & Manufacturing",
       description: "BSP, JIC, METRIC, ORFS fittings and custom hose assemblies",
-      image: "/lovable-uploads/739b83df-5c32-4ccc-b67e-9ee8c0ea3d8b.png"
+      image: [
+        "https://5.imimg.com/data5/GI/YC/MY-32061269/hydraulic-hoses-and-fittings-1000x1000.jpg",
+        "https://www.abhydraulics.in/images/products/hose-pipe-fitting.jpg",
+      ],
     },
     {
       title: "On-Site Mobile Van Service",
-      description: "Revolutionary battery-operated mobile unit for on-site hydraulic hose crimping and emergency repairs",
-      image: "/lovable-uploads/536ec15e-e52c-453d-90b1-6f7d6b49f9f4.png"
+      description:
+        "Revolutionary battery-operated mobile unit for on-site hydraulic hose crimping and emergency repairs",
+      image: "/lovable-uploads/536ec15e-e52c-453d-90b1-6f7d6b49f9f4.png",
     },
-    {
-      title: "XCMG 178E Piling Services",
-      description: "Expert servicing and spare parts for piling rigs with specialized maintenance",
-      image: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png"
-    }
   ];
 
   return (
@@ -33,20 +37,33 @@ const ServicesSection = () => {
             Comprehensive solutions for your industrial needs
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
+            <div
               key={index}
               className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-4 transition-all duration-500 animate-slide-up border-l-4 border-blue-500"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="h-56 bg-gray-100 relative overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+              <div className="h-80 bg-gray-100 relative overflow-hidden">
+                {Array.isArray(service.image) ? (
+                  <div className="flex h-full w-full">
+                    {service.image.map((imgSrc, imgIdx) => (
+                      <img
+                        key={imgIdx}
+                        src={imgSrc}
+                        alt={`${service.title} ${imgIdx + 1}`}
+                        className="w-1/2 h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-8">
@@ -56,7 +73,7 @@ const ServicesSection = () => {
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                <Link 
+                <Link
                   to="/services"
                   className="inline-flex items-center text-red-600 hover:text-red-700 font-semibold group-hover:translate-x-2 transition-transform duration-300"
                 >
