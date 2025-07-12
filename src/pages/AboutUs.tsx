@@ -75,7 +75,7 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <motion.header 
+      <motion.header
         className="bg-white shadow-lg sticky top-0 z-50"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -84,7 +84,7 @@ const AboutUs = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="group">
-              <motion.h1 
+              <motion.h1
                 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -95,7 +95,7 @@ const AboutUs = () => {
                 Professional Engineering Services
               </p>
             </Link>
-            
+
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
               <Link
@@ -131,29 +131,60 @@ const AboutUs = () => {
             </nav>
 
             {/* Mobile Menu Button */}
-            <motion.button 
+            <motion.button
               className="md:hidden p-2"
               onClick={toggleMobileMenu}
               whileTap={{ scale: 0.95 }}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </motion.button>
           </div>
 
           {/* Mobile Navigation Menu */}
           {isMobileMenuOpen && (
-            <motion.div 
+            <motion.div
               className="md:hidden mt-4 pb-4 border-t border-gray-200"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
             >
               <nav className="flex flex-col space-y-4 pt-4">
-                <Link to="/" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>Home</Link>
-                <Link to="/about" className="text-red-600 font-semibold" onClick={toggleMobileMenu}>About</Link>
-                <Link to="/services" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>Services</Link>
-                <Link to="/contact" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>Contact</Link>
-                <button onClick={handleWhatsAppClick} className="flex items-center text-gray-700 hover:text-red-600 justify-start">
+                <Link
+                  to="/"
+                  className="text-gray-700 hover:text-red-600 font-semibold"
+                  onClick={toggleMobileMenu}
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/about"
+                  className="text-red-600 font-semibold"
+                  onClick={toggleMobileMenu}
+                >
+                  About
+                </Link>
+                <Link
+                  to="/services"
+                  className="text-gray-700 hover:text-red-600 font-semibold"
+                  onClick={toggleMobileMenu}
+                >
+                  Services
+                </Link>
+                <Link
+                  to="/contact"
+                  className="text-gray-700 hover:text-red-600 font-semibold"
+                  onClick={toggleMobileMenu}
+                >
+                  Contact
+                </Link>
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="flex items-center text-gray-700 hover:text-red-600 justify-start"
+                >
                   <Phone className="w-4 h-4 mr-2" />
                   <span className="font-semibold">WhatsApp</span>
                 </button>
@@ -165,19 +196,19 @@ const AboutUs = () => {
 
       {/* About Hero Section */}
       <section className="relative gradient-red text-white py-16 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 bg-dots opacity-10"
           animate={{ rotate: 360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto text-center"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <motion.h2 
+            <motion.h2
               className="text-4xl md:text-5xl font-bold mb-6"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
@@ -185,7 +216,7 @@ const AboutUs = () => {
             >
               About SMS Engineering Works
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-xl mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -193,7 +224,7 @@ const AboutUs = () => {
             >
               Leading Hydraulic Solutions & Engineering Excellence
             </motion.p>
-            <motion.div 
+            <motion.div
               className="flex justify-center space-x-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -219,14 +250,14 @@ const AboutUs = () => {
       {/* Company Overview Section */}
       <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h3 
+            <motion.h3
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
               initial={{ scale: 0.9 }}
               whileInView={{ scale: 1 }}
@@ -235,32 +266,39 @@ const AboutUs = () => {
             >
               25+ Years of Excellence in Hydraulic Solutions
             </motion.h3>
-            <motion.p 
+            <motion.p
               className="text-lg text-gray-600 mb-8 leading-relaxed"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              With over 25 years of expertise in hydraulic solutions and piling services, SMS Engineering Works has established itself as a trusted partner for industries across Mumbai. We specialize in manufacturing high-quality hydraulic hose fittings, providing comprehensive piling services, and maintaining XCMG 178E equipment with precision and reliability.
+              With over 25 years of expertise in hydraulic solutions and piling
+              services, SMS Engineering Works has established itself as a
+              trusted partner for industries across Mumbai. We specialize in
+              manufacturing high-quality hydraulic hose fittings, providing
+              comprehensive piling services, and maintaining XCMG 178E equipment
+              with precision and reliability.
             </motion.p>
-            <motion.div 
+            <motion.div
               className="grid md:grid-cols-3 gap-6 mt-8"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <motion.div 
+              <motion.div
                 className="bg-white p-6 rounded-xl shadow-lg"
                 variants={itemVariants}
                 whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
               >
                 <Award className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h4 className="text-xl font-bold text-gray-900 mb-2">25+ Years</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">
+                  25+ Years
+                </h4>
                 <p className="text-gray-600">Industry Experience</p>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="bg-white p-6 rounded-xl shadow-lg"
                 variants={itemVariants}
                 whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
@@ -269,7 +307,7 @@ const AboutUs = () => {
                 <h4 className="text-xl font-bold text-gray-900 mb-2">500+</h4>
                 <p className="text-gray-600">Projects Completed</p>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="bg-white p-6 rounded-xl shadow-lg"
                 variants={itemVariants}
                 whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
@@ -286,7 +324,7 @@ const AboutUs = () => {
       {/* Hydraulic Hose Fittings Section - Compact Cards */}
       <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="max-w-6xl mx-auto"
             variants={containerVariants}
             initial="hidden"
@@ -298,83 +336,105 @@ const AboutUs = () => {
                 Leading Hydraulic Hose Pipe Fittings
               </h3>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Manufacturers, Suppliers & Dealers in Pune, Maharashtra
+                Manufacturers, Suppliers & Dealers in Maharashtra
               </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
-              <motion.div 
+              <motion.div
                 className="relative"
                 variants={itemVariants}
                 animate={floatingVariants}
               >
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                   <div className="flex items-center mb-4">
-                    <motion.div 
+                    <motion.div
                       className="bg-gradient-to-r from-red-500 to-blue-500 p-2 rounded-lg mr-3"
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
                       <Gauge className="w-6 h-6 text-white" />
                     </motion.div>
-                    <h4 className="text-xl font-bold text-gray-900">Premium Quality</h4>
+                    <h4 className="text-xl font-bold text-gray-900">
+                      Premium Quality
+                    </h4>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    SMS Engineering Works is the leading Hydraulic hose pipe fittings manufacturer, supplier & dealer in Pune, Maharashtra. We work hard to provide you with the highest quality, most reliable Hydraulic hose pipe fittings in Pune.
+                    SMS Engineering Works is the leading Hydraulic hose pipe
+                    fittings manufacturer, supplier & dealer in Maharashtra. We
+                    work hard to provide you with the highest quality, most
+                    reliable Hydraulic hose pipe fittings in Maharashtra
                   </p>
                 </div>
               </motion.div>
 
-              <motion.div 
-                className="space-y-4"
-                variants={itemVariants}
-              >
-                <motion.div 
+              <motion.div className="space-y-4" variants={itemVariants}>
+                <motion.div
                   className="bg-white p-4 rounded-lg shadow-md border-l-4 border-red-500"
-                  whileHover={{ x: 10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                  whileHover={{
+                    x: 10,
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                  }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="flex items-center mb-2">
                     <Users className="w-5 h-5 text-red-500 mr-2" />
-                    <h5 className="font-semibold text-gray-900 text-sm">Customer-Centric Approach</h5>
+                    <h5 className="font-semibold text-gray-900 text-sm">
+                      Customer-Centric Approach
+                    </h5>
                   </div>
                   <p className="text-gray-600 text-xs">
-                    Our Hydraulic hose pipe fittings believe that customer service is the key to success, so we are here to help you find the perfect solution for your Hydraulic needs.
+                    Our Hydraulic hose pipe fittings believe that customer
+                    service is the key to success, so we are here to help you
+                    find the perfect solution for your Hydraulic needs.
                   </p>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500"
-                  whileHover={{ x: 10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                  whileHover={{
+                    x: 10,
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                  }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="flex items-center mb-2">
                     <Settings className="w-5 h-5 text-blue-500 mr-2" />
-                    <h5 className="font-semibold text-gray-900 text-sm">Complete Solutions</h5>
+                    <h5 className="font-semibold text-gray-900 text-sm">
+                      Complete Solutions
+                    </h5>
                   </div>
                   <p className="text-gray-600 text-xs">
-                    Our wide selection of Hydraulic pipe fittings includes everything from adapters and elbows to hose supports and seals.
+                    Our wide selection of Hydraulic pipe fittings includes
+                    everything from adapters and elbows to hose supports and
+                    seals.
                   </p>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   className="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500"
-                  whileHover={{ x: 10, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                  whileHover={{
+                    x: 10,
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                  }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="flex items-center mb-2">
                     <TrendingUp className="w-5 h-5 text-green-500 mr-2" />
-                    <h5 className="font-semibold text-gray-900 text-sm">Best Options</h5>
+                    <h5 className="font-semibold text-gray-900 text-sm">
+                      Best Options
+                    </h5>
                   </div>
                   <p className="text-gray-600 text-xs">
-                    Hydraulic hose pipe fittings suppliers strive to provide you with the best options for each unique application.
+                    Hydraulic hose pipe fittings suppliers strive to provide you
+                    with the best options for each unique application.
                   </p>
                 </motion.div>
               </motion.div>
             </div>
 
             {/* Engineering Services Grid - Compact */}
-            <motion.div 
+            <motion.div
               className="bg-white rounded-xl shadow-lg p-6"
               variants={itemVariants}
               whileHover={{ y: -5 }}
@@ -384,28 +444,46 @@ const AboutUs = () => {
                 <h4 className="text-2xl font-bold text-gray-900 mb-2">
                   End-to-End Engineering Support
                 </h4>
-                <p className="text-gray-600 text-sm">We offer comprehensive engineering solutions for:</p>
+                <p className="text-gray-600 text-sm">
+                  We offer comprehensive engineering solutions for:
+                </p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { icon: Layers, title: "Soil Investigation", desc: "Geotechnical testing & analysis" },
-                  { icon: Gauge, title: "Load Testing", desc: "Static and dynamic testing" },
-                  { icon: Zap, title: "Piling Services", desc: "Cast-in-situ & micro piling" },
-                  { icon: Settings, title: "Rigging Services", desc: "Advanced rotary rigs" }
+                  {
+                    icon: Layers,
+                    title: "Soil Investigation",
+                    desc: "Geotechnical testing & analysis",
+                  },
+                  {
+                    icon: Gauge,
+                    title: "Load Testing",
+                    desc: "Static and dynamic testing",
+                  },
+                  {
+                    icon: Zap,
+                    title: "Piling Services",
+                    desc: "Cast-in-situ & micro piling",
+                  },
+                  {
+                    icon: Settings,
+                    title: "Rigging Services",
+                    desc: "Advanced rotary rigs",
+                  },
                 ].map((service, index) => (
                   <motion.div
                     key={index}
                     className="text-center group"
                     variants={itemVariants}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.05,
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.1)" 
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
                     }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <div className="bg-gradient-to-br from-red-50 to-blue-50 p-4 rounded-lg border border-gray-100 h-full">
-                      <motion.div 
+                      <motion.div
                         className="bg-gradient-to-r from-red-500 to-blue-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.6 }}
@@ -428,14 +506,14 @@ const AboutUs = () => {
       {/* Company Story - Compact */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h3 
+            <motion.h3
               className="text-3xl font-bold text-gray-900 mb-8 text-center"
               initial={{ y: 30 }}
               whileInView={{ y: 0 }}
@@ -458,10 +536,14 @@ const AboutUs = () => {
                   engineering solutions.
                 </p>
                 <p className="text-gray-600 mb-6 text-sm">
-                  Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs. Our commitment to quality and customer satisfaction has made us a trusted partner for businesses across Maharashtra.
+                  Professional engineering services provider in Mumbai,
+                  specializing in XCMG 178E piling rig and offering 24/7
+                  solutions for all your industrial needs. Our commitment to
+                  quality and customer satisfaction has made us a trusted
+                  partner for businesses across Maharashtra.
                 </p>
-                <motion.button 
-                  onClick={handleWhatsAppClick} 
+                <motion.button
+                  onClick={handleWhatsAppClick}
                   className="btn-primary w-full md:w-auto"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -469,7 +551,7 @@ const AboutUs = () => {
                   Contact Us on WhatsApp
                 </motion.button>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="bg-gradient-to-br from-gray-50 to-red-50 p-6 rounded-xl shadow-lg"
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -484,9 +566,9 @@ const AboutUs = () => {
                     "Excellence in every project",
                     "24/7 customer support",
                     "Innovative solutions",
-                    "Reliable service delivery"
+                    "Reliable service delivery",
                   ].map((value, index) => (
-                    <motion.li 
+                    <motion.li
                       key={index}
                       className="flex items-center"
                       initial={{ opacity: 0, x: -20 }}
@@ -526,7 +608,10 @@ const AboutUs = () => {
                 Highly skilled professionals with years of experience
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg card-hover text-center animate-scale-in" style={{animationDelay: '0.2s'}}>
+            <div
+              className="bg-white p-6 rounded-xl shadow-lg card-hover text-center animate-scale-in"
+              style={{ animationDelay: "0.2s" }}
+            >
               <Award className="w-10 h-10 text-red-600 mx-auto mb-4" />
               <h4 className="text-lg font-bold text-gray-900 mb-3">
                 Quality Assurance
@@ -535,7 +620,10 @@ const AboutUs = () => {
                 Premium quality work with guaranteed results
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg card-hover text-center animate-scale-in" style={{animationDelay: '0.4s'}}>
+            <div
+              className="bg-white p-6 rounded-xl shadow-lg card-hover text-center animate-scale-in"
+              style={{ animationDelay: "0.4s" }}
+            >
               <Clock className="w-10 h-10 text-red-600 mx-auto mb-4" />
               <h4 className="text-lg font-bold text-gray-900 mb-3">
                 24/7 Service
@@ -560,25 +648,34 @@ const AboutUs = () => {
                 Driving excellence through strategic partnerships
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl animate-slide-left">
                 <div className="flex items-center mb-3">
                   <Eye className="w-6 h-6 text-red-600 mr-3" />
-                  <h4 className="text-xl font-bold text-gray-900">Our Vision</h4>
+                  <h4 className="text-xl font-bold text-gray-900">
+                    Our Vision
+                  </h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  To be the preferred strategic partner providing comprehensive support services to the manufacturing industries. As we expand into emerging markets, we bring our expertise in offering high-quality solutions to our customers.
+                  To be the preferred strategic partner providing comprehensive
+                  support services to the manufacturing industries. As we expand
+                  into emerging markets, we bring our expertise in offering
+                  high-quality solutions to our customers.
                 </p>
               </div>
-              
+
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl animate-slide-right">
                 <div className="flex items-center mb-3">
                   <Target className="w-6 h-6 text-red-600 mr-3" />
-                  <h4 className="text-xl font-bold text-gray-900">Our Mission</h4>
+                  <h4 className="text-xl font-bold text-gray-900">
+                    Our Mission
+                  </h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  Our commitment to our employees makes us deliver likable, tailor-made solutions. Our goal is to go beyond being a business associate and be a value-creating strategic partner.
+                  Our commitment to our employees makes us deliver likable,
+                  tailor-made solutions. Our goal is to go beyond being a
+                  business associate and be a value-creating strategic partner.
                 </p>
               </div>
             </div>
@@ -587,20 +684,30 @@ const AboutUs = () => {
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 animate-fade-in">
                 <div className="flex items-center mb-3">
                   <Lightbulb className="w-6 h-6 text-red-600 mr-3" />
-                  <h4 className="text-lg font-bold text-gray-900">Innovation</h4>
+                  <h4 className="text-lg font-bold text-gray-900">
+                    Innovation
+                  </h4>
                 </div>
                 <p className="text-gray-600 text-sm">
-                  We continuously innovate to provide cutting-edge solutions that meet the evolving needs of our clients in the manufacturing sector.
+                  We continuously innovate to provide cutting-edge solutions
+                  that meet the evolving needs of our clients in the
+                  manufacturing sector.
                 </p>
               </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 animate-fade-in" style={{animationDelay: '0.2s'}}>
+
+              <div
+                className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 animate-fade-in"
+                style={{ animationDelay: "0.2s" }}
+              >
                 <div className="flex items-center mb-3">
                   <Handshake className="w-6 h-6 text-red-600 mr-3" />
-                  <h4 className="text-lg font-bold text-gray-900">Partnership</h4>
+                  <h4 className="text-lg font-bold text-gray-900">
+                    Partnership
+                  </h4>
                 </div>
                 <p className="text-gray-600 text-sm">
-                  Building long-term relationships through trust, reliability, and exceptional service delivery that creates mutual value.
+                  Building long-term relationships through trust, reliability,
+                  and exceptional service delivery that creates mutual value.
                 </p>
               </div>
             </div>
@@ -610,13 +717,13 @@ const AboutUs = () => {
 
       {/* CTA Section */}
       <section className="gradient-black text-white py-16 relative overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 bg-dots opacity-5"
           animate={{ x: [0, 100, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <motion.h3 
+          <motion.h3
             className="text-3xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -625,7 +732,7 @@ const AboutUs = () => {
           >
             Ready to Work With Us?
           </motion.h3>
-          <motion.p 
+          <motion.p
             className="text-lg mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -634,8 +741,8 @@ const AboutUs = () => {
           >
             Contact us today for professional engineering solutions
           </motion.p>
-          <motion.button 
-            onClick={handleWhatsAppClick} 
+          <motion.button
+            onClick={handleWhatsAppClick}
             className="btn-primary"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -658,7 +765,9 @@ const AboutUs = () => {
                 SMS ENGINEERING WORKS
               </h4>
               <p className="text-gray-400 mb-4 text-sm">
-                Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs.
+                Professional engineering services provider in Mumbai,
+                specializing in XCMG 178E piling rig and offering 24/7 solutions
+                for all your industrial needs.
               </p>
               <div className="flex items-center text-gray-400">
                 <Star className="w-4 h-4 text-yellow-500 mr-1" />
@@ -707,17 +816,26 @@ const AboutUs = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:text-white transition-colors">
+                  <Link
+                    to="/about"
+                    className="hover:text-white transition-colors"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services" className="hover:text-white transition-colors">
+                  <Link
+                    to="/services"
+                    className="hover:text-white transition-colors"
+                  >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-white transition-colors">
+                  <Link
+                    to="/contact"
+                    className="hover:text-white transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>

@@ -259,13 +259,13 @@ const Services = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Machinery & Equipment
             </h2>
-            <h3 className="text-2xl font-semibold text-red-600 mb-4">
+            {/* <h3 className="text-2xl font-semibold text-red-600 mb-4">
               Piling Rigs & Cranes
-            </h3>
-            <p className="text-xl text-gray-600">
+            </h3> */}
+            {/* <p className="text-xl text-gray-600">
               State-of-the-art piling equipment for efficient and precise
               operations
-            </p>
+            </p> */}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -21,8 +21,8 @@ const HeroSection = () => {
   }, []);
 
   const heroImages = [
+    "https://crownlifters.com/wp-content/uploads/2019/05/Mait-HR-180-CP-Piling-Rig-1.jpg",
     "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
-    "/lovable-uploads/28042f01-6d76-44ab-bfb8-19495e02d4d4.png",
     "/lovable-uploads/dadd887c-2e8e-407f-a547-005213dab467.png",
     "/lovable-uploads/739b83df-5c32-4ccc-b67e-9ee8c0ea3d8b.png",
   ];
@@ -87,8 +87,11 @@ const HeroSection = () => {
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
                 S.M.S ENGINEERING WORKS
               </h1>
+              <div className="text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-xl md:text-2xl font-bold ">
+                Piling Service Provider & Manufacturer of Hose Fittings
+              </div>
 
-              <div className="text-2xl md:text-3xl lg:text-4xl mb-6 animate-slide-left">
+              {/* <div className="text-2xl md:text-3xl lg:text-4xl mb-6 animate-slide-left">
                 <span className="text-yellow-300 font-semibold">
                   Manufacturers & Service Providers
                 </span>
@@ -100,9 +103,9 @@ const HeroSection = () => {
                 <span className="text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-xl md:text-2xl font-bold ">
                   + XCMG 178E Piling Services
                 </span>
-              </div>
+              </div> */}
 
-              <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-8 py-4 rounded-2xl inline-block font-bold mb-8 animate-pulse shadow-lg">
+              <div className="bg-gradient-to-r pb-8 from-yellow-500 to-orange-500 text-black px-8 py-4 rounded-2xl inline-block font-bold mb-8 animate-pulse shadow-lg">
                 <div className="flex items-center space-x-2">
                   <span>
                     🚐 Revolutionary Battery-Operated Mobile Van for Complete
@@ -111,11 +114,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <p className="text-xl md:text-2xl mb-8 animate-slide-right opacity-90 max-w-4xl mx-auto leading-relaxed">
-                Professional engineering services with 24/7 emergency mobile
-                service, on-site repair capabilities, and specialized piling
-                solutions for industrial needs across Mumbai and Maharashtra.
-              </p>
+              <p className="text-xl md:text-2xl mb-8 animate-slide-right opacity-90 max-w-4xl mx-auto leading-relaxed"></p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12 animate-scale-in">

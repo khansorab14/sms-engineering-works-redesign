@@ -30,7 +30,7 @@ const Index = () => {
       <FeaturesSection />
       <ServicesSection />
       <EquipmentSection />
-      <AboutPreviewSection />
+      {/* <AboutPreviewSection /> */}
       <CTASection />
 
       <Footer />
