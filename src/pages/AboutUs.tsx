@@ -1,5 +1,5 @@
-
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Phone,
   MapPin,
@@ -14,6 +14,13 @@ import {
   Eye,
   Lightbulb,
   Handshake,
+  Wrench,
+  Gauge,
+  Settings,
+  Layers,
+  Zap,
+  Shield,
+  TrendingUp,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -28,16 +35,59 @@ const AboutUs = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
+
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
+      <motion.header 
+        className="bg-white shadow-lg sticky top-0 z-50"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100 }}
+      >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="animate-slide-left">
-              <h1 className="text-2xl md:text-3xl font-bold text-gradient">
+            <Link to="/" className="group">
+              <motion.h1 
+                className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 SMS ENGINEERING WORKS
-              </h1>
+              </motion.h1>
               <p className="text-gray-600 text-xs md:text-sm">
                 Professional Engineering Services
               </p>
@@ -47,7 +97,7 @@ const AboutUs = () => {
             <nav className="hidden md:flex items-center space-x-6">
               <Link
                 to="/"
-                className="text-gray-700 hover:text-red-600 font-semibold"
+                className="text-gray-700 hover:text-red-600 font-semibold transition-colors duration-300"
               >
                 Home
               </Link>
@@ -56,37 +106,45 @@ const AboutUs = () => {
               </Link>
               <Link
                 to="/services"
-                className="text-gray-700 hover:text-red-600 font-semibold"
+                className="text-gray-700 hover:text-red-600 font-semibold transition-colors duration-300"
               >
                 Services
               </Link>
               <Link
                 to="/contact"
-                className="text-gray-700 hover:text-red-600 font-semibold"
+                className="text-gray-700 hover:text-red-600 font-semibold transition-colors duration-300"
               >
                 Contact
               </Link>
-              <button
+              <motion.button
                 onClick={handleWhatsAppClick}
-                className="flex items-center text-gray-700 hover:text-red-600"
+                className="flex items-center text-gray-700 hover:text-red-600 transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Phone className="w-4 h-4 mr-2" />
                 <span className="font-semibold">WhatsApp</span>
-              </button>
+              </motion.button>
             </nav>
 
             {/* Mobile Menu Button */}
-            <button 
+            <motion.button 
               className="md:hidden p-2"
               onClick={toggleMobileMenu}
+              whileTap={{ scale: 0.95 }}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            </motion.button>
           </div>
 
           {/* Mobile Navigation Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
+            <motion.div 
+              className="md:hidden mt-4 pb-4 border-t border-gray-200"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+            >
               <nav className="flex flex-col space-y-4 pt-4">
                 <Link to="/" className="text-gray-700 hover:text-red-600 font-semibold" onClick={toggleMobileMenu}>Home</Link>
                 <Link to="/about" className="text-red-600 font-semibold" onClick={toggleMobileMenu}>About</Link>
@@ -97,34 +155,232 @@ const AboutUs = () => {
                   <span className="font-semibold">WhatsApp</span>
                 </button>
               </nav>
-            </div>
+            </motion.div>
           )}
         </div>
-      </header>
+      </motion.header>
 
       {/* About Hero Section */}
-      <section className="gradient-red text-white py-12 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
+      <section className="relative gradient-red text-white py-12 md:py-20 overflow-hidden">
+        <motion.div 
+          className="absolute inset-0 bg-dots opacity-10"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.h2 
+              className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+            >
               About SMS Engineering Works
-            </h2>
-            <p className="text-lg md:text-xl lg:text-2xl mb-8 animate-fade-in">
-              Your trusted engineering partner since establishment
-            </p>
-          </div>
+            </motion.h2>
+            <motion.p 
+              className="text-lg md:text-xl lg:text-2xl mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              Leading Hydraulic Solutions & Engineering Excellence
+            </motion.p>
+            <motion.div 
+              className="flex justify-center space-x-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
+              <motion.div whileHover={{ scale: 1.1 }} className="text-center">
+                <Wrench className="w-12 h-12 mx-auto mb-2" />
+                <p className="text-sm">Expert Engineering</p>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.1 }} className="text-center">
+                <Gauge className="w-12 h-12 mx-auto mb-2" />
+                <p className="text-sm">Hydraulic Solutions</p>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.1 }} className="text-center">
+                <Shield className="w-12 h-12 mx-auto mb-2" />
+                <p className="text-sm">Quality Assured</p>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Hydraulic Hose Fittings Section - NEW */}
+      <section className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div className="text-center mb-12 md:mb-16" variants={itemVariants}>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
+                Leading Hydraulic Hose Pipe Fittings
+              </h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Manufacturers, Suppliers & Dealers in Pune, Maharashtra
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
+              <motion.div 
+                className="relative"
+                variants={itemVariants}
+                {...floatingVariants}
+              >
+                <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <motion.div 
+                      className="bg-gradient-to-r from-red-500 to-blue-500 p-3 rounded-lg mr-4"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <Gauge className="w-8 h-8 text-white" />
+                    </motion.div>
+                    <h4 className="text-2xl font-bold text-gray-900">Premium Quality</h4>
+                  </div>
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                    SMS Engineering Works is the leading Hydraulic hose pipe fittings manufacturer, supplier & dealer in Pune, Maharashtra. We work hard to provide you with the highest quality, most reliable Hydraulic hose pipe fittings in Pune.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="space-y-6"
+                variants={itemVariants}
+              >
+                <motion.div 
+                  className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500"
+                  whileHover={{ x: 10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-center mb-3">
+                    <Users className="w-6 h-6 text-red-500 mr-3" />
+                    <h5 className="font-semibold text-gray-900">Customer-Centric Approach</h5>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Our Hydraulic hose pipe fittings believe that customer service is the key to success, so we are here to help you find the perfect solution for your Hydraulic needs.
+                  </p>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500"
+                  whileHover={{ x: 10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-center mb-3">
+                    <Settings className="w-6 h-6 text-blue-500 mr-3" />
+                    <h5 className="font-semibold text-gray-900">Complete Solutions</h5>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Our wide selection of Hydraulic pipe fittings includes everything from adapters and elbows to hose supports and seals.
+                  </p>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500"
+                  whileHover={{ x: 10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-center mb-3">
+                    <TrendingUp className="w-6 h-6 text-green-500 mr-3" />
+                    <h5 className="font-semibold text-gray-900">Best Options</h5>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Hydraulic hose pipe fittings suppliers strive to provide you with the best options for each unique application.
+                  </p>
+                </motion.div>
+              </motion.div>
+            </div>
+
+            {/* Engineering Services Grid */}
+            <motion.div 
+              className="bg-white rounded-2xl shadow-2xl p-8 md:p-12"
+              variants={itemVariants}
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="text-center mb-8">
+                <h4 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  End-to-End Engineering Support
+                </h4>
+                <p className="text-gray-600">We offer comprehensive engineering solutions for:</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { icon: Layers, title: "Soil Investigation", desc: "Geotechnical testing & analysis" },
+                  { icon: Gauge, title: "Load Testing", desc: "Static and dynamic testing" },
+                  { icon: Zap, title: "Piling Services", desc: "Cast-in-situ & micro piling" },
+                  { icon: Settings, title: "Rigging Services", desc: "Advanced rotary rigs" }
+                ].map((service, index) => (
+                  <motion.div
+                    key={index}
+                    className="text-center group"
+                    variants={itemVariants}
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.1)" 
+                    }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="bg-gradient-to-br from-red-50 to-blue-50 p-6 rounded-xl border border-gray-100 h-full">
+                      <motion.div 
+                        className="bg-gradient-to-r from-red-500 to-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <service.icon className="w-8 h-8 text-white" />
+                      </motion.div>
+                      <h5 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                        {service.title}
+                      </h5>
+                      <p className="text-gray-600 text-sm">{service.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Company Story */}
-      <section className="py-12 md:py-20">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center animate-slide-up">
+          <motion.div 
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.h3 
+              className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center"
+              initial={{ y: 30 }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               Our Story
-            </h3>
+            </motion.h3>
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="animate-slide-left">
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
                 <p className="text-base md:text-lg text-gray-600 mb-6">
                   SMS Engineering Works has been serving Mumbai's industrial
                   sector with dedication and expertise. Located in the heart of
@@ -134,35 +390,48 @@ const AboutUs = () => {
                 <p className="text-base md:text-lg text-gray-600 mb-6">
                   Professional engineering services provider in Mumbai, specializing in XCMG 178E piling rig and offering 24/7 solutions for all your industrial needs. Our commitment to quality and customer satisfaction has made us a trusted partner for businesses across Maharashtra.
                 </p>
-                <button onClick={handleWhatsAppClick} className="btn-primary w-full md:w-auto">
+                <motion.button 
+                  onClick={handleWhatsAppClick} 
+                  className="btn-primary w-full md:w-auto"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   Contact Us on WhatsApp
-                </button>
-              </div>
-              <div className="bg-gray-100 p-6 md:p-8 rounded-xl animate-slide-right">
+                </motion.button>
+              </motion.div>
+              <motion.div 
+                className="bg-gradient-to-br from-gray-50 to-red-50 p-6 md:p-8 rounded-xl shadow-lg"
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
                 <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                   Our Values
                 </h4>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                    Excellence in every project
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                    24/7 customer support
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                    Innovative solutions
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                    Reliable service delivery
-                  </li>
-                </ul>
-              </div>
+                <motion.ul className="space-y-3 text-gray-600">
+                  {[
+                    "Excellence in every project",
+                    "24/7 customer support",
+                    "Innovative solutions",
+                    "Reliable service delivery"
+                  ].map((value, index) => (
+                    <motion.li 
+                      key={index}
+                      className="flex items-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1, duration: 0.5 }}
+                    >
+                      <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
+                      {value}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -270,15 +539,43 @@ const AboutUs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="gradient-black text-white py-12 md:py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl md:text-4xl font-bold mb-6 animate-slide-up">Ready to Work With Us?</h3>
-          <p className="text-lg md:text-xl mb-8 animate-fade-in">
+      <section className="gradient-black text-white py-12 md:py-20 relative overflow-hidden">
+        <motion.div 
+          className="absolute inset-0 bg-dots opacity-5"
+          animate={{ x: [0, 100, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <motion.h3 
+            className="text-2xl md:text-4xl font-bold mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Ready to Work With Us?
+          </motion.h3>
+          <motion.p 
+            className="text-lg md:text-xl mb-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
             Contact us today for professional engineering solutions
-          </p>
-          <button onClick={handleWhatsAppClick} className="btn-primary animate-scale-in">
+          </motion.p>
+          <motion.button 
+            onClick={handleWhatsAppClick} 
+            className="btn-primary"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
             Contact on WhatsApp
-          </button>
+          </motion.button>
         </div>
       </section>
 
@@ -287,7 +584,7 @@ const AboutUs = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h4 className="text-xl md:text-2xl font-bold text-gradient mb-4">
+              <h4 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent mb-4">
                 SMS ENGINEERING WORKS
               </h4>
               <p className="text-gray-400 mb-4 text-sm md:text-base">
@@ -318,7 +615,7 @@ const AboutUs = () => {
                 </div>
                 <button
                   onClick={handleWhatsAppClick}
-                  className="flex items-center text-gray-400 hover:text-white"
+                  className="flex items-center text-gray-400 hover:text-white transition-colors"
                 >
                   <Phone className="w-5 h-5 mr-2 text-red-500" />
                   <span>WhatsApp Us</span>
@@ -335,22 +632,22 @@ const AboutUs = () => {
               </h5>
               <ul className="space-y-2 text-gray-400 text-sm md:text-base">
                 <li>
-                  <Link to="/" className="hover:text-white">
+                  <Link to="/" className="hover:text-white transition-colors">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:text-white">
+                  <Link to="/about" className="hover:text-white transition-colors">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services" className="hover:text-white">
+                  <Link to="/services" className="hover:text-white transition-colors">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-white">
+                  <Link to="/contact" className="hover:text-white transition-colors">
                     Contact
                   </Link>
                 </li>
