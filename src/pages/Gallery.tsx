@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -8,6 +7,11 @@ import FloatingCTA from "../components/FloatingCTA";
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const categories = [
     { id: "all", name: "All Images" },

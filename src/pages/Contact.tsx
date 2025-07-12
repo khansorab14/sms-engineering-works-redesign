@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Phone,
   MapPin,
@@ -22,6 +22,11 @@ const Contact = () => {
     service: "",
     message: "",
   });
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/919820209923", "_blank");
@@ -66,7 +71,7 @@ Thank you!`;
 
   const services = [
     "Hydraulic Hose Fittings",
-    "Piling Services",
+    "Piling Services", 
     "XCMG 178E Maintenance",
     "Teflon Hoses",
     "Stainless Steel Hoses",

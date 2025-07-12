@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -26,6 +26,11 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/919820209923", "_blank");
@@ -59,13 +64,11 @@ const AboutUs = () => {
   };
 
   const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
+    y: [-10, 10, -10],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
     },
   };
 
@@ -213,6 +216,73 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Company Overview Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.h3 
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100 }}
+            >
+              25+ Years of Excellence in Hydraulic Solutions
+            </motion.h3>
+            <motion.p 
+              className="text-lg text-gray-600 mb-8 leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              With over 25 years of expertise in hydraulic solutions and piling services, SMS Engineering Works has established itself as a trusted partner for industries across Mumbai. We specialize in manufacturing high-quality hydraulic hose fittings, providing comprehensive piling services, and maintaining XCMG 178E equipment with precision and reliability.
+            </motion.p>
+            <motion.div 
+              className="grid md:grid-cols-3 gap-6 mt-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.div 
+                className="bg-white p-6 rounded-xl shadow-lg"
+                variants={itemVariants}
+                whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+              >
+                <Award className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                <h4 className="text-xl font-bold text-gray-900 mb-2">25+ Years</h4>
+                <p className="text-gray-600">Industry Experience</p>
+              </motion.div>
+              <motion.div 
+                className="bg-white p-6 rounded-xl shadow-lg"
+                variants={itemVariants}
+                whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+              >
+                <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <h4 className="text-xl font-bold text-gray-900 mb-2">500+</h4>
+                <p className="text-gray-600">Projects Completed</p>
+              </motion.div>
+              <motion.div 
+                className="bg-white p-6 rounded-xl shadow-lg"
+                variants={itemVariants}
+                whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+              >
+                <Clock className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                <h4 className="text-xl font-bold text-gray-900 mb-2">24/7</h4>
+                <p className="text-gray-600">Customer Support</p>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Hydraulic Hose Fittings Section - Compact Cards */}
       <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
@@ -236,7 +306,7 @@ const AboutUs = () => {
               <motion.div 
                 className="relative"
                 variants={itemVariants}
-                {...floatingVariants}
+                animate={floatingVariants}
               >
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                   <div className="flex items-center mb-4">

@@ -1,160 +1,155 @@
-
 import React from "react";
-import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { Gauge, Settings, Wrench, Shield, CheckCircle, Star } from "lucide-react";
 
 const EquipmentSection = () => {
-  const equipmentSpecs = [
-    {
-      name: "XCMG XR178E",
-      type: "Heavy Duty Piling Rig",
-      capacity: "Max 35m depth",
-      features: [
-        "Hydraulic rotary drive",
-        "Advanced control system",
-        "High torque capacity",
-      ],
-      image: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
-    },
-    {
-      name: "Mobile Van Service",
-      type: "On-Site Emergency Response",
-      capacity: "Battery-operated system",
-      features: [
-        "On-site crimping",
-        "Emergency response",
-        "Professional service",
-      ],
-      image: "/lovable-uploads/536ec15e-e52c-453d-90b1-6f7d6b49f9f4.png",
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.1,
         delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 50, opacity: 0, scale: 0.9 },
+    hidden: { y: 20, opacity: 0, scale: 0.9 },
     visible: {
       y: 0,
       opacity: 1,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
       },
     },
   };
 
+  const equipment = [
+    {
+      name: "XCMG 178E Piling Rig",
+      image: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
+      specs: [
+        "Maximum drilling depth: 40m",
+        "Rotary torque: 178 kN·m",
+        "Pull-down force: 180 kN",
+        "Advanced control system"
+      ],
+      description: "State-of-the-art piling equipment for foundation work"
+    },
+    {
+      name: "Hydraulic Crimping Machine",
+      image: "/lovable-uploads/88862d2a-a13e-4c74-923c-741ae70c868d.png",
+      specs: [
+        "Multi-die crimping system",
+        "Precise pressure control",
+        "Various hose sizes",
+        "Professional grade quality"
+      ],
+      description: "Professional hydraulic hose crimping for perfect connections"
+    },
+    {
+      name: "Mobile Service Van",
+      image: "/lovable-uploads/536ec15e-e52c-453d-90b1-6f7d6b49f9f4.png",
+      specs: [
+        "Fully equipped workshop",
+        "24/7 availability",
+        "On-site repairs",
+        "Emergency response"
+      ],
+      description: "Complete mobile hydraulic service solution"
+    }
+  ];
+
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Advanced Equipment
-          </h2>
-          <p className="text-xl text-gray-600">
-            State-of-the-art machinery for precision and efficiency
-          </p>
-        </motion.div>
-
-        <motion.div 
-          className="grid md:grid-cols-2 gap-8"
+          className="max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {equipmentSpecs.map((equipment, index) => (
-            <motion.div
-              key={index}
-              className="group bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl relative"
-              variants={itemVariants}
-              whileHover={{ 
-                y: -15,
-                rotateY: 5,
-                transition: { type: "spring", stiffness: 300 }
-              }}
-            >
-              {/* Animated border */}
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-red-500 via-blue-500 to-red-500 opacity-0 group-hover:opacity-100"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                style={{ padding: '2px', borderRadius: '12px' }}
+          <motion.div className="text-center mb-12" variants={itemVariants}>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our <span className="text-red-600">Equipment</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Advanced machinery and tools to deliver superior hydraulic solutions
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {equipment.map((item, index) => (
+              <motion.div
+                key={index}
+                className="group bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -10,
+                  scale: 1.02,
+                  boxShadow: "0 25px 50px rgba(0,0,0,0.15)" 
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="w-full h-full bg-white rounded-xl" />
-              </motion.div>
-              
-              <div className="relative z-10">
-                <div className="h-56 bg-gray-200 relative overflow-hidden">
+                <div className="relative overflow-hidden">
                   <motion.img
-                    src={equipment.image}
-                    alt={equipment.name}
-                    className="w-full h-full object-cover"
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
                   />
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <motion.div 
-                    className="absolute bottom-4 left-4 text-white"
-                    initial={{ y: 20, opacity: 0 }}
-                    whileHover={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="bg-red-600 px-3 py-1 rounded-full text-sm font-semibold">
-                      {equipment.type}
-                    </div>
-                  </motion.div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
+                
                 <div className="p-6">
-                  <motion.h3 
-                    className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300"
-                    whileHover={{ x: 5 }}
-                  >
-                    {equipment.name}
-                  </motion.h3>
-                  <p className="text-red-600 font-semibold mb-3 text-lg">
-                    {equipment.capacity}
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
+                    {item.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                    {item.description}
                   </p>
                   <ul className="space-y-2">
-                    {equipment.features.map((feature, featureIndex) => (
-                      <motion.li
-                        key={featureIndex}
-                        className="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
-                        initial={{ x: -20, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: featureIndex * 0.1 }}
+                    {item.specs.map((spec, specIndex) => (
+                      <motion.li 
+                        key={specIndex} 
+                        className="flex items-center text-sm text-gray-600"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: specIndex * 0.1 }}
                       >
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                        {spec}
                       </motion.li>
                     ))}
                   </ul>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            className="text-center mt-12"
+            variants={itemVariants}
+          >
+            <div className="bg-gradient-to-r from-red-50 to-blue-50 p-8 rounded-xl border border-gray-100">
+              <div className="flex justify-center items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
+                ))}
+                <span className="ml-2 text-gray-600 font-semibold">Trusted Quality</span>
               </div>
-            </motion.div>
-          ))}
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Professional Equipment, Professional Results
+              </h3>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Our state-of-the-art equipment ensures precision, reliability, and efficiency in every project we undertake.
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
