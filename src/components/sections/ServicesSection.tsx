@@ -1,33 +1,9 @@
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Wrench, Gauge, Layers, Zap } from "lucide-react";
 
 const ServicesSection = () => {
-  const services = [
-    {
-      title: "XCMG 178E Piling Services",
-      description:
-        "We specialize in delivering end to end piling, and foundation engineering services across Mumbai, Navi Mumbai and Maharashtra. Our solutions are designed for bridges, high rise structures, residential complexes and industrial infrastructure.",
-      image: "/lovable-uploads/a97ec7f1-7c0c-4b7d-bf05-43170abc9a83.png",
-    },
-    {
-      title: "Hydraulic Hose Fittings & Manufacturing",
-      description: "BSP, JIC, METRIC, ORFS fittings and custom hose assemblies",
-      image: [
-        "https://5.imimg.com/data5/GI/YC/MY-32061269/hydraulic-hoses-and-fittings-1000x1000.jpg",
-        "https://www.abhydraulics.in/images/products/hose-pipe-fitting.jpg",
-      ],
-    },
-    {
-      title: "On-Site Mobile Van Service",
-      description:
-        "Revolutionary battery-operated mobile unit for on-site hydraulic hose crimping and emergency repairs",
-      image: "/lovable-uploads/536ec15e-e52c-453d-90b1-6f7d6b49f9f4.png",
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,21 +16,48 @@ const ServicesSection = () => {
   };
 
   const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
       },
     },
   };
 
+  const services = [
+    {
+      icon: Wrench,
+      title: "Hydraulic Hose Fittings",
+      description: "High-quality hydraulic hose pipe fittings manufacturing and supply",
+      features: ["Premium Materials", "Custom Solutions", "Quality Tested"]
+    },
+    {
+      icon: Gauge,
+      title: "Load Testing Services",
+      description: "Comprehensive static and dynamic load testing solutions",
+      features: ["Static Testing", "Dynamic Analysis", "Detailed Reports"]
+    },
+    {
+      icon: Layers,
+      title: "Piling Services",
+      description: "Complete piling solutions including cast-in-situ and micro piling",
+      features: ["Cast-in-situ Piles", "Micro Piling", "Soil Investigation"]
+    },
+    {
+      icon: Zap,
+      title: "Rigging Services",
+      description: "Advanced rotary rig services with XCMG 178E equipment",
+      features: ["XCMG 178E Rig", "Professional Team", "24/7 Support"]
+    }
+  ];
+
   return (
-    <section className="py-20 bg-white">
+    <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,15 +65,15 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Core Services
+            Our Services
           </h2>
-          <p className="text-xl text-gray-600">
-            Comprehensive solutions for your industrial needs
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive engineering solutions tailored to your industrial needs
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid md:grid-cols-3 gap-6"
+        <motion.div
+          className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -79,72 +82,49 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl border-l-4 border-blue-500 relative"
+              className="group"
               variants={itemVariants}
               whileHover={{ 
-                y: -10,
-                transition: { type: "spring", stiffness: 300 }
+                scale: 1.02,
+                boxShadow: "0 25px 50px rgba(0,0,0,0.15)" 
               }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              {/* Glowing effect on hover */}
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
-              />
-              
-              <div className="h-48 bg-gray-100 relative overflow-hidden">
-                {Array.isArray(service.image) ? (
-                  <div className="flex h-full w-full">
-                    {service.image.map((imgSrc, imgIdx) => (
-                      <motion.img
-                        key={imgIdx}
-                        src={imgSrc}
-                        alt={`${service.title} ${imgIdx + 1}`}
-                        className="w-1/2 h-full object-cover"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <motion.img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
+              <div className="bg-gradient-to-br from-gray-50 to-red-50 p-8 rounded-xl shadow-lg border border-gray-100 h-full">
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                />
-              </div>
-              <div className="p-6 relative z-10">
-                <motion.h3 
-                  className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  className="bg-gradient-to-r from-red-500 to-red-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
                 >
+                  <service.icon className="w-8 h-8 text-white" />
+                </motion.div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-600 transition-colors">
                   {service.title}
-                </motion.h3>
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                </h3>
+                
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                <motion.div
-                  whileHover={{ x: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Link
-                    to="/services"
-                    className="inline-flex items-center text-red-600 hover:text-red-700 font-semibold text-sm"
-                  >
-                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </motion.div>
+                
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <motion.li
+                      key={featureIndex}
+                      className="flex items-center text-gray-700"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: featureIndex * 0.1, duration: 0.5 }}
+                    >
+                      <motion.div 
+                        className="w-2 h-2 bg-red-500 rounded-full mr-3"
+                        whileHover={{ scale: 1.5 }}
+                      />
+                      {feature}
+                    </motion.li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}

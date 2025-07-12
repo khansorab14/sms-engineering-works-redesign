@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -58,14 +59,12 @@ const AboutUs = () => {
     },
   };
 
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
+  const floatingAnimation = {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
     },
   };
 
@@ -213,7 +212,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Hydraulic Hose Fittings Section - Compact Cards */}
+      {/* Company Overview Section */}
       <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -224,11 +223,11 @@ const AboutUs = () => {
             viewport={{ once: true }}
           >
             <motion.div className="text-center mb-12" variants={itemVariants}>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
-                Leading Hydraulic Hose Pipe Fittings
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
+                25+ Years of Engineering Excellence
               </h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Manufacturers, Suppliers & Dealers in Pune, Maharashtra
+              <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                With over 25 years of expertise in hydraulic solutions and piling services, SMS Engineering Works has established itself as a trusted partner for industries across Mumbai. We specialize in manufacturing high-quality hydraulic hose fittings, providing comprehensive piling services, and maintaining XCMG 178E piling rigs.
               </p>
             </motion.div>
 
@@ -236,7 +235,7 @@ const AboutUs = () => {
               <motion.div 
                 className="relative"
                 variants={itemVariants}
-                {...floatingVariants}
+                animate={floatingAnimation}
               >
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                   <div className="flex items-center mb-4">
@@ -247,10 +246,10 @@ const AboutUs = () => {
                     >
                       <Gauge className="w-6 h-6 text-white" />
                     </motion.div>
-                    <h4 className="text-xl font-bold text-gray-900">Premium Quality</h4>
+                    <h4 className="text-xl font-bold text-gray-900">Industry Leadership</h4>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    SMS Engineering Works is the leading Hydraulic hose pipe fittings manufacturer, supplier & dealer in Pune, Maharashtra. We work hard to provide you with the highest quality, most reliable Hydraulic hose pipe fittings in Pune.
+                    SMS Engineering Works is the leading hydraulic solutions provider, manufacturer, supplier & dealer in Mumbai, Maharashtra. We work tirelessly to deliver the highest quality, most reliable hydraulic solutions across all industrial sectors.
                   </p>
                 </div>
               </motion.div>
@@ -269,7 +268,7 @@ const AboutUs = () => {
                     <h5 className="font-semibold text-gray-900 text-sm">Customer-Centric Approach</h5>
                   </div>
                   <p className="text-gray-600 text-xs">
-                    Our Hydraulic hose pipe fittings believe that customer service is the key to success, so we are here to help you find the perfect solution for your Hydraulic needs.
+                    We believe that exceptional customer service is the foundation of success. Our team is dedicated to helping you find the perfect hydraulic solution for your specific industrial needs.
                   </p>
                 </motion.div>
 
@@ -280,10 +279,10 @@ const AboutUs = () => {
                 >
                   <div className="flex items-center mb-2">
                     <Settings className="w-5 h-5 text-blue-500 mr-2" />
-                    <h5 className="font-semibold text-gray-900 text-sm">Complete Solutions</h5>
+                    <h5 className="font-semibold text-gray-900 text-sm">Complete Engineering Solutions</h5>
                   </div>
                   <p className="text-gray-600 text-xs">
-                    Our wide selection of Hydraulic pipe fittings includes everything from adapters and elbows to hose supports and seals.
+                    Our comprehensive range includes hydraulic hose fittings, adapters, elbows, hose supports, seals, and complete piling services with advanced equipment.
                   </p>
                 </motion.div>
 
@@ -294,16 +293,16 @@ const AboutUs = () => {
                 >
                   <div className="flex items-center mb-2">
                     <TrendingUp className="w-5 h-5 text-green-500 mr-2" />
-                    <h5 className="font-semibold text-gray-900 text-sm">Best Options</h5>
+                    <h5 className="font-semibold text-gray-900 text-sm">Tailored Solutions</h5>
                   </div>
                   <p className="text-gray-600 text-xs">
-                    Hydraulic hose pipe fittings suppliers strive to provide you with the best options for each unique application.
+                    We strive to provide the best-suited options for each unique application, ensuring optimal performance and reliability in every project.
                   </p>
                 </motion.div>
               </motion.div>
             </div>
 
-            {/* Engineering Services Grid - Compact */}
+            {/* Engineering Services Grid */}
             <motion.div 
               className="bg-white rounded-xl shadow-lg p-6"
               variants={itemVariants}
@@ -355,7 +354,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Company Story - Compact */}
+      {/* Company Story */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -435,7 +434,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Compact Cards */}
+      {/* Why Choose Us */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -478,7 +477,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Vision and Mission - Compact */}
+      {/* Vision and Mission */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
